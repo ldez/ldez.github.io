@@ -12,8 +12,13 @@ disqusShortname = "thebestcodeisnocodeatall"
 
 [permalinks]
   article = "/blog/:year/:month/:day/:slug/"
+  audio = "/blog/:year/:month/:day/:slug/"
   code = "/blog/:year/:month/:day/:slug/"
+  gallery = "/blog/:year/:month/:day/:slug/"
   link = "/blog/:year/:month/:day/:slug/"
+  page = "/blog/:year/:month/:day/:slug/"
+  quote = "/blog/:year/:month/:day/:slug/"
+  video = "/blog/:year/:month/:day/:slug/"
 
 [params]
   favicon = "" # set a favicon icon
@@ -25,8 +30,8 @@ disqusShortname = "thebestcodeisnocodeatall"
 
   # Description and meta data for the search engines
   author = "ldez"
-  description = "ldez bolg"
-  keywords = "blog,personal"
+  description = "ldez blog"
+  keywords = "blog,personal,software,programming,developer"
 
 
   # if you want to use gravatar for the header image
@@ -37,7 +42,7 @@ disqusShortname = "thebestcodeisnocodeatall"
 
   twitter    = "https://twitter.com/ludnadez"
   github     = "https://github.com/ldez"
-  # linkedin   = ""
+  linkedin   = "https://www.linkedin.com/in/fernandez-ludovic-185a7618"
 
   copyrightBy = "by ldez"
   copyrightUseCurrentYear = true  # set to true to always display the current year in the copyright
