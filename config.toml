@@ -1,0 +1,56 @@
+baseURL = "http://ldez.github.io/"
+title = "The Best Code is No Code At All"
+languageCode = "en-us"
+theme = "bilberry-hugo-theme"
+
+enableRobotsTXT = true
+
+# DefaultContentLanguage = "en"
+
+googleAnalytics = "UA-62168601-1"
+disqusShortname = "thebestcodeisnocodeatall"
+
+[permalinks]
+  article = "/blog/:year/:month/:day/:slug/"
+  code = "/blog/:year/:month/:day/:slug/"
+  link = "/blog/:year/:month/:day/:slug/"
+
+[params]
+  favicon = "" # set a favicon icon
+  subtitle = "Un blog avec du code dedans."
+
+  siteWidth = "1000px"
+  # permanentTopNav = false
+  # showHeaderLanguageChooser = false
+
+  # Description and meta data for the search engines
+  author = "ldez"
+  description = "ldez bolg"
+  keywords = "blog,personal"
+
+
+  # if you want to use gravatar for the header image
+  gravatarEMail = "lfernandez.dev@gmail.com"
+
+  # social media profile urls for the footer links
+  showSocialMedia = true
+
+  twitter    = "https://twitter.com/ludnadez"
+  github     = "https://github.com/ldez"
+  # linkedin   = ""
+
+  copyrightBy = "by ldez"
+  copyrightUseCurrentYear = true  # set to true to always display the current year in the copyright
+  copyrightYearOverride = "2015"
+  copyrightUrl = "https://github.com/ldez"
+  creditsText = "Bilberry Hugo Theme"
+  creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
+
+[taxonomies]
+  author   = "author"
+  tag      = "tags"
+  category = "categories"
+
+[outputs]
+  home = [ "HTML", "JSON", "RSS" ]
+  page = [ "HTML" ]
