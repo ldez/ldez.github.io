@@ -1,3 +1,4 @@
+dist: xenial
 language: go
 
 go:
@@ -13,8 +14,9 @@ branches:
     - sources
 
 install:
+  -  npm install -g postcss-cli
   # Hugo - documentation
-  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_0.53_Linux-64bit.deb
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_extended_0.54.0_Linux-64bit.deb
   - sudo dpkg -i /tmp/hugo.deb
 
 script:
