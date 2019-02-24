@@ -10,3 +10,4 @@ hugo-build: clean
 
 hugo:
 	hugo server --enableGitInfo --watch --source .
+	# hugo server -D
