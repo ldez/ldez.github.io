@@ -33,7 +33,6 @@ disqusShortname = "thebestcodeisnocodeatall"
   description = "ldez blog"
   keywords = "blog,personal,software,programming,developer"
 
-
   # if you want to use gravatar for the header image
   gravatarEMail = "lfernandez.dev@gmail.com"
 
