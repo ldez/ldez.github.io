@@ -1,4 +1,4 @@
-baseURL = "http://ldez.github.io/"
+baseURL = "https://ldez.github.io/"
 title = "The Best Code is No Code At All"
 languageCode = "en-us"
 theme = "bilberry-hugo-theme"
