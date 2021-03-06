@@ -1,5 +1,5 @@
 ---
-title: "GoMoDirectives"
+title: "GoModDirectives"
 date: 2021-03-04T01:01:13+01:00
 
 categories: ['tool']
