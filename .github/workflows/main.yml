@@ -11,16 +11,23 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     env:
+      GO_VERSION: stable
       NODE_VERSION: '12'
-      HUGO_VERSION: 0.80.0
+      HUGO_VERSION: '0.117.0'
 
     steps:
 
       # https://github.com/marketplace/actions/checkout
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      # https://github.com/marketplace/actions/setup-go-environment
+      - name: Set up Go ${{ env.GO_VERSION }}
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ env.GO_VERSION }}
 
       - name: Setup node
         uses: actions/setup-node@v2
@@ -47,7 +54,7 @@ jobs:
 
       - name: Install Hugo
         run: |
-          wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
+          wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-amd64.deb
           sudo dpkg -i /tmp/hugo.deb
 
       - name: Build Documentation

@@ -1,7 +1,7 @@
 baseURL = "https://ldez.github.io/"
 title = "The Best Code is No Code At All"
 languageCode = "en-us"
-theme = "bilberry-hugo-theme"
+#theme = "bilberry-hugo-theme"
 
 enableRobotsTXT = true
 
@@ -39,6 +39,13 @@ disqusShortname = "thebestcodeisnocodeatall"
   # social media profile urls for the footer links
   showSocialMedia = true
 
+  socialMediaLinks = [
+    { link = "https://fosstodon.org/@ldez", icon = "fab fa-mastodon", rel = "me" },
+    { link = "https://github.com/ldez", icon = "fab fa-github" },
+    { link = "https://twitter.com/ludnadez", icon = "fab fa-twitter"},
+    { link = "https://www.linkedin.com/in/fernandez-ludovic-185a7618", icon = "fab fa-linkedin" },
+  ]
+
   twitter    = "https://twitter.com/ludnadez"
   github     = "https://github.com/ldez"
   linkedin   = "https://www.linkedin.com/in/fernandez-ludovic-185a7618"
@@ -58,3 +65,7 @@ disqusShortname = "thebestcodeisnocodeatall"
 [outputs]
   home = [ "HTML", "JSON", "RSS" ]
   page = [ "HTML" ]
+
+[module]
+  [[module.imports]]
+  path = "github.com/Lednerb/bilberry-hugo-theme/v3"
