@@ -7,6 +7,6 @@ tags: ['tool', 'traefik', 'certificates', 'acme', 'dumper', 'kv']
 
 link: "https://github.com/ldez/traefik-certs-dumper"
 ---
-Dump ACME data from Traefik to certificates .
+Dump ACME data from Traefik to certificates.
 
 <!--more-->
