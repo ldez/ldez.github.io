@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>random on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/random/</link>
+    <description>Recent content in random on The Best Code is No Code At All</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Mar 2018 01:18:13 +0100</lastBuildDate><atom:link href="https://ldez.github.io/tags/random/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>listrandom</title>
+      <link>https://ldez.github.io/blog/2018/03/17/listrandom/</link>
+      <pubDate>Sat, 17 Mar 2018 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2018/03/17/listrandom/</guid>
+      <description>&lt;p&gt;A simple tool to randomize a list. No backend, only on browser.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
