@@ -24,6 +24,8 @@ disqusShortname = "thebestcodeisnocodeatall"
   favicon = "" # set a favicon icon
   subtitle = "A blog with code inside."
 
+  enableLightDarkTheme = true
+
   siteWidth = "1000px"
   # permanentTopNav = false
   # showHeaderLanguageChooser = false
@@ -31,7 +33,7 @@ disqusShortname = "thebestcodeisnocodeatall"
   # Description and meta data for the search engines
   author = "ldez"
   description = "ldez blog"
-  keywords = "blog,personal,software,programming,developer"
+  keywords = "blog,golang,go,software,programming,developer"
 
   # if you want to use gravatar for the header image
   gravatarEMail = "lfernandez.dev@gmail.com"
@@ -68,4 +70,4 @@ disqusShortname = "thebestcodeisnocodeatall"
 
 [module]
   [[module.imports]]
-  path = "github.com/Lednerb/bilberry-hugo-theme/v3"
+  path = "github.com/Lednerb/bilberry-hugo-theme/v4"
