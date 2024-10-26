@@ -10,6 +10,8 @@ Mocktail: Mock Generator for Strongly-Typed Mocks.
 
 <!--more-->
 
+![Mocktail](/images/mocktail-social-github.png)
+
 In software development, mocks are important testing pieces used to produce isolation for a targeted code.
 When you need to test a piece of code, in some cases, you want to isolate that tested piece
  — for example, you want to test a service that uses a database, but you don't want to call the real database.
