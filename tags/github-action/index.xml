@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github-Action on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/github-action/</link>
+    <description>Recent content in Github-Action on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 04:54:37 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/github-action/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GHActions</title>
+      <link>https://ldez.github.io/blog/2019/02/17/ghactions/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/ghactions/</guid>
+      <description>&lt;p&gt;Create a Github Action in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mjolnir</title>
+      <link>https://ldez.github.io/blog/2019/02/17/mjolnir/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/mjolnir/</guid>
+      <description>&lt;p&gt;A GitHub Action to close issues related to a merged pull request.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kata on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/categories/kata/</link>
+    <description>Recent content in Kata on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 03:01:06 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/categories/kata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata Print Diamond</title>
+      <link>https://ldez.github.io/blog/2015/08/22/kata-print-diamond/</link>
+      <pubDate>Sat, 22 Aug 2015 22:22:38 +0200</pubDate>
+      <guid>https://ldez.github.io/blog/2015/08/22/kata-print-diamond/</guid>
+      <description>&lt;p&gt;Ce kata définit par &lt;a href=&#34;http://claysnow.co.uk/recycling-tests-in-tdd/&#34;&gt;Seb Rose&lt;/a&gt; a pour but de montrer une approche visant à recycler les tests afin de ne pas créer de phase tunnel de refactor long et massif.&lt;/p&gt;&#xA;&lt;p&gt;J&amp;rsquo;ai donc respecté l&amp;rsquo;approche TDD pour l&amp;rsquo;émergence du design et fait des &amp;lsquo;&lt;em&gt;baby step&lt;/em&gt;&amp;rsquo; en créant des tests pour chacune des étapes afin d&amp;rsquo;avoir une &lt;em&gt;victoire&lt;/em&gt; à chaque fois. (Il est très important d&amp;rsquo;avoir rapidement un retour positif pour ce que l&amp;rsquo;on fait)&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;Étant donné une lettre, imprimer un diamant en commençant par &amp;ldquo;A&amp;rdquo; avec la lettre fournie pour point le plus large.&lt;/p&gt;&#xA;&lt;p&gt;Par exemple &lt;code&gt;print-diamond ‘C’&lt;/code&gt; affiche :&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  A&#xA; B B&#xA;C   C&#xA; B B&#xA;  A&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

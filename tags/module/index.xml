@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Module on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/module/</link>
+    <description>Recent content in Module on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 03:59:46 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/module/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>motoko</title>
+      <link>https://ldez.github.io/blog/2019/01/13/motoko/</link>
+      <pubDate>Sun, 13 Jan 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/01/13/motoko/</guid>
+      <description>&lt;p&gt;A tool, based on Go modules, to update a dependency to a major version.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
