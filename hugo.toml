@@ -22,7 +22,7 @@ disqusShortname = "thebestcodeisnocodeatall"
 
 [params]
   favicon = "" # set a favicon icon
-  subtitle = "Un blog avec du code dedans."
+  subtitle = "A blog with code inside."
 
   siteWidth = "1000px"
   # permanentTopNav = false
@@ -52,7 +52,7 @@ disqusShortname = "thebestcodeisnocodeatall"
 
   copyrightBy = "by ldez"
   copyrightUseCurrentYear = true  # set to true to always display the current year in the copyright
-  copyrightYearOverride = "2015"
+  copyrightYearOverride = "2024"
   copyrightUrl = "https://github.com/ldez"
   creditsText = "Bilberry Hugo Theme"
   creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
