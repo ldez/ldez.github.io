@@ -30,7 +30,7 @@ disqusShortname = "thebestcodeisnocodeatall"
   permanentTopNav = true
   # showHeaderLanguageChooser = false
 
-  # Description and meta data for the search engines
+  # Description and metadata for the search engines
   author = "ldez"
   description = "ldez blog"
   keywords = "blog,golang,go,software,programming,developer"
@@ -40,7 +40,6 @@ disqusShortname = "thebestcodeisnocodeatall"
 
   # social media profile urls for the footer links
   showSocialMedia = true
-
   socialMediaLinks = [
     { link = "https://fosstodon.org/@ldez", icon = "fab fa-mastodon", rel = "me" },
     { link = "https://github.com/ldez", icon = "fab fa-github" },

@@ -4,6 +4,11 @@ date: 2024-10-26T01:18:13+01:00
 categories: ['GoLang', 'documentation']
 tags: ['godoc', 'emoji', 'go', 'golang', 'doc', 'documentation']
 slug: links-godoc-module
+twitter:
+  card: summary
+  site: ldez
+  title: "How I published links inside the pkg.go.dev documentation of my module"
+  image: /images/pkggodevlinks-package.png
 ---
 
 While hunting down a package on https://pkg.go.dev, I stumbled upon a delightful surprise in the "Links" section: there are custom links!!
