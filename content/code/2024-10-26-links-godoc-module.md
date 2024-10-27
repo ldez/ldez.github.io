@@ -7,6 +7,7 @@ slug: links-godoc-module
 twitter:
   card: summary
   site: ldez
+  creator: ldez
   title: "How I published links inside the pkg.go.dev documentation of my module"
   image: /images/pkggodevlinks-package.png
 ---
