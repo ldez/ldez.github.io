@@ -27,7 +27,7 @@ disqusShortname = "thebestcodeisnocodeatall"
   enableLightDarkTheme = true
 
   siteWidth = "1000px"
-  # permanentTopNav = false
+  permanentTopNav = true
   # showHeaderLanguageChooser = false
 
   # Description and meta data for the search engines
@@ -47,10 +47,6 @@ disqusShortname = "thebestcodeisnocodeatall"
     { link = "https://twitter.com/ludnadez", icon = "fab fa-twitter"},
     { link = "https://www.linkedin.com/in/fernandez-ludovic-185a7618", icon = "fab fa-linkedin" },
   ]
-
-  twitter    = "https://twitter.com/ludnadez"
-  github     = "https://github.com/ldez"
-  linkedin   = "https://www.linkedin.com/in/fernandez-ludovic-185a7618"
 
   copyrightBy = "by ldez"
   copyrightUseCurrentYear = true  # set to true to always display the current year in the copyright
