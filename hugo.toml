@@ -41,10 +41,11 @@ disqusShortname = "thebestcodeisnocodeatall"
   # social media profile urls for the footer links
   showSocialMedia = true
   socialMediaLinks = [
-    { link = "https://fosstodon.org/@ldez", icon = "fab fa-mastodon", rel = "me" },
+    { link = "https://bento.me/ldez", icon = "fas fa-user"},
     { link = "https://github.com/ldez", icon = "fab fa-github" },
+    { link = "https://fosstodon.org/@ldez", icon = "fab fa-mastodon", rel = "me" },
+    { link = "https://bsky.app/profile/ldezoss.bsky.social", icon = "fab fa-bluesky"},
     { link = "https://twitter.com/ludnadez", icon = "fab fa-twitter"},
-    { link = "https://www.linkedin.com/in/fernandez-ludovic-185a7618", icon = "fab fa-linkedin" },
   ]
 
   copyrightBy = "by ldez"
