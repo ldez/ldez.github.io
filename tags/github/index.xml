@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/github/</link>
+    <description>Recent content in Github on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2024 20:29:50 +0200</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributarepo</title>
+      <link>https://ldez.github.io/blog/2024/07/07/distributarepo/</link>
+      <pubDate>Sun, 07 Jul 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/07/07/distributarepo/</guid>
+      <description>&lt;p&gt;Helper to get an overview of the forks of a GitHub repository.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GHBan</title>
+      <link>https://ldez.github.io/blog/2024/05/12/ghban/</link>
+      <pubDate>Sun, 12 May 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/05/12/ghban/</guid>
+      <description>&lt;p&gt;To block multiple accounts across multiple organizations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SemGo</title>
+      <link>https://ldez.github.io/blog/2020/08/14/semgo/</link>
+      <pubDate>Fri, 14 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/08/14/semgo/</guid>
+      <description>&lt;p&gt;Keeps Go version in SemaphoreCI up to date.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lasius Mixtus 🐜</title>
+      <link>https://ldez.github.io/blog/2020/08/05/lasius-mixtus/</link>
+      <pubDate>Wed, 05 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/08/05/lasius-mixtus/</guid>
+      <description>&lt;p&gt;Publish Documentation on a GitHub Repository.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GHActions</title>
+      <link>https://ldez.github.io/blog/2019/02/17/ghactions/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/ghactions/</guid>
+      <description>&lt;p&gt;Create a Github Action in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mjolnir</title>
+      <link>https://ldez.github.io/blog/2019/02/17/mjolnir/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/mjolnir/</guid>
+      <description>&lt;p&gt;A GitHub Action to close issues related to a merged pull request.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NRDCG - The natural reserve of DNS clients in Go</title>
+      <link>https://ldez.github.io/blog/2019/02/01/nrdcg-the-natural-reserve-of-dns-clients-in-go/</link>
+      <pubDate>Fri, 01 Feb 2019 01:17:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/01/nrdcg-the-natural-reserve-of-dns-clients-in-go/</guid>
+      <description>&lt;p&gt;The natural reserve of DNS clients in Go.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Messor Structor 🐜</title>
+      <link>https://ldez.github.io/blog/2018/01/14/messor-structor/</link>
+      <pubDate>Sun, 14 Jan 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2018/01/14/messor-structor/</guid>
+      <description>&lt;p&gt;Manage multiple documentation versions with Mkdocs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Gallienii 🐜</title>
+      <link>https://ldez.github.io/blog/2017/09/10/myrmica-gallienii/</link>
+      <pubDate>Sun, 10 Sep 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/09/10/myrmica-gallienii/</guid>
+      <description>&lt;p&gt;Keep Forks Synchronized.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GHWebHook</title>
+      <link>https://ldez.github.io/blog/2017/08/06/ghwebhook/</link>
+      <pubDate>Sun, 06 Aug 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/08/06/ghwebhook/</guid>
+      <description>&lt;p&gt;Create a Github WebHook in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Aloba 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</link>
+      <pubDate>Sun, 30 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</guid>
+      <description>&lt;p&gt;Add labels and milestone on pull requests and issues.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Bibikoffi 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</guid>
+      <description>&lt;p&gt;Closes stale issues.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Lobicornis 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</guid>
+      <description>&lt;p&gt;Update and Merge Pull Request.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PRM</title>
+      <link>https://ldez.github.io/blog/2017/06/11/prm/</link>
+      <pubDate>Sun, 11 Jun 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/06/11/prm/</guid>
+      <description>&lt;p&gt;Pull Request Manager for Maintainers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GCG</title>
+      <link>https://ldez.github.io/blog/2017/05/14/gcg/</link>
+      <pubDate>Sun, 14 May 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/05/14/gcg/</guid>
+      <description>&lt;p&gt;A GitHub Changelog Generator.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

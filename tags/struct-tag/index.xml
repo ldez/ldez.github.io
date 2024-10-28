@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Struct-Tag on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/struct-tag/</link>
+    <description>Recent content in Struct-Tag on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Apr 2021 11:39:32 +0200</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/struct-tag/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tagliatelle</title>
+      <link>https://ldez.github.io/blog/2021/04/11/tagliatelle/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/04/11/tagliatelle/</guid>
+      <description>&lt;p&gt;A linter that handles Go struct tags.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

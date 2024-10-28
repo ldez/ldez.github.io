@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Acme on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/acme/</link>
+    <description>Recent content in Acme on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Feb 2024 00:36:59 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/acme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>traefik-certs-cleaner</title>
+      <link>https://ldez.github.io/blog/2022/01/23/traefik-certs-cleaner/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2022/01/23/traefik-certs-cleaner/</guid>
+      <description>&lt;p&gt;A simple helper to clean the Traefik &lt;code&gt;acme.json&lt;/code&gt; file by removing and revoking certificates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>traefik-certs-dumper</title>
+      <link>https://ldez.github.io/blog/2019/02/10/traefik-certs-dumper/</link>
+      <pubDate>Sun, 10 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/10/traefik-certs-dumper/</guid>
+      <description>&lt;p&gt;Dump ACME data from Traefik to certificates.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

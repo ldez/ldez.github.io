@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wrapper on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/wrapper/</link>
+    <description>Recent content in Wrapper on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 04:54:37 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/wrapper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go-git-cmd-wrapper</title>
+      <link>https://ldez.github.io/blog/2017/06/04/go-git-cmd-wrapper/</link>
+      <pubDate>Sun, 04 Jun 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/06/04/go-git-cmd-wrapper/</guid>
+      <description>&lt;p&gt;A simple wrapper around git command in Go.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

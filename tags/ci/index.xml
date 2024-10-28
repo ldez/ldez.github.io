@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ci on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/ci/</link>
+    <description>Recent content in Ci on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Aug 2020 22:21:10 +0200</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SemGo</title>
+      <link>https://ldez.github.io/blog/2020/08/14/semgo/</link>
+      <pubDate>Fri, 14 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/08/14/semgo/</guid>
+      <description>&lt;p&gt;Keeps Go version in SemaphoreCI up to date.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

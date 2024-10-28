@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Promesse on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/categories/promesse/</link>
+    <description>Recent content in Promesse on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 03:01:06 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/categories/promesse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Promesse de promesse, promis ?</title>
+      <link>https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/</link>
+      <pubDate>Thu, 21 May 2015 21:43:19 +0200</pubDate>
+      <guid>https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/</guid>
+      <description>&lt;p&gt;Lors d&amp;rsquo;une conversation avec un collègue de travail (&lt;a href=&#34;http://gillespie59.github.io&#34;&gt;Emmanuel Demey&lt;/a&gt;), une question est venue :&lt;/p&gt;&#xA;&lt;p&gt;Si une promesse prend comme argument de son &lt;code&gt;resolve&lt;/code&gt; une promesse, que se passe t&amp;rsquo;il dans le &lt;code&gt;then&lt;/code&gt; de la méthode appelante ?&lt;/p&gt;&#xA;&lt;p&gt;Le resultat est une promesse ou une &lt;code&gt;String&lt;/code&gt; ?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

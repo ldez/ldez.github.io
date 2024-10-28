@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Moderation on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/moderation/</link>
+    <description>Recent content in Moderation on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2024 20:29:50 +0200</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/moderation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GHBan</title>
+      <link>https://ldez.github.io/blog/2024/05/12/ghban/</link>
+      <pubDate>Sun, 12 May 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/05/12/ghban/</guid>
+      <description>&lt;p&gt;To block multiple accounts across multiple organizations.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
