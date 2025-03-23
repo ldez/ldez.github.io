@@ -7,7 +7,7 @@ enableRobotsTXT = true
 
 # DefaultContentLanguage = "en"
 
-googleAnalytics = "UA-62168601-1"
+# googleAnalytics = "UA-62168601-1"
 disqusShortname = "thebestcodeisnocodeatall"
 
 [permalinks]
