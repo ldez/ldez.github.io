@@ -4,6 +4,12 @@ date: 2023-01-10T01:18:13+01:00
 categories: ['lib']
 tags: ['tool', 'mock', 'go', 'golang', 'testify']
 slug: take-a-mocktail
+twitter:
+  card: summary
+  site: ldez
+  creator: ldez
+  title: "Mocktail: Mock Generator for Strongly-Typed Mocks"
+  image: images/mocktail-social-github.png
 ---
 
 ![Mocktail](/images/mocktail-social-github.png)
