@@ -30,10 +30,7 @@
     {{- end }}
 {{ end }}
 {{ with .Params.twitter }}
-    <meta name="og:url" content="{{ $.Permalink }}">
     {{ if ne .card "app" -}}
-    <meta name="og:title" content="{{- .title -}}">
-    <meta name="og:description" content="{{- .title -}}">
     <meta name="og:image" content="{{ $.Site.BaseURL }}{{- .image -}}">
     {{- end }}
 {{ end }}
