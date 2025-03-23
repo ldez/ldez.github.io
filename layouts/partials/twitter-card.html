@@ -29,3 +29,11 @@
     {{ with .player_stream_content_type }}<meta name="twitter:player:stream:content_type" content="{{- . -}}">{{ end }}
     {{- end }}
 {{ end }}
+{{ with .Params.twitter }}
+    <meta name="og:url" content="{{ $.Permalink }}">
+    {{ if ne .card "app" -}}
+    <meta name="og:title" content="{{- .title -}}">
+    <meta name="og:description" content="{{- .title -}}">
+    <meta name="og:image" content="{{ $.Site.BaseURL }}{{- .image -}}">
+    {{- end }}
+{{ end }}
