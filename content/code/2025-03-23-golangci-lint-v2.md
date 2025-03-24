@@ -162,3 +162,9 @@ So consider donating to the project, as giving back through donations is a wonde
 - https://donate.ldez.dev
 
 Thank you for being a part of this community, and happy linting with golangci-lint v2!
+
+---
+
+The Go gopher was designed by Renee French.  
+The design is licensed under the Creative Commons 3.0 Attributions license.  
+[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
