@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="ldez">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.136.5">
+    <title>
+        
+           
+               Welcome to golangci-lint v2 &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="Welcome to golangci-lint v2">
+    <meta itemprop="description" content="Welcome to golangci-lint v2 - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="Welcome to golangci-lint v2">
+  <meta property="og:description" content="I am thrilled to announce the release of v2!
+I hope is that these features will enhance your development experience.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2025-03-23T01:18:13+01:00">
+    <meta property="article:modified_time" content="2025-03-24T15:58:12+01:00">
+    <meta property="article:tag" content="Golangci-Lint">
+    <meta property="article:tag" content="Golangci">
+    <meta property="article:tag" content="Linting">
+    <meta property="article:tag" content="Linter">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Golang">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.37df0d8c4e01d48af9ecde04ff7ca4e01fc9d2456378c25b5b5560c552581f0c.css" integrity="sha256-N98NjE4B1Ir57N4E/3yk4B/J0kVjeMJbW1VgxVJYHww=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="ldez">
+    <meta name="twitter:title" content="Welcome to golangci-lint v2">
+    <meta name="twitter:image" content="https://ldez.github.io/images/amazing-world-golangci-lint-v2.png">
+    <meta name="twitter:image:alt" content="The amazing world of golangci-lint v2">
+    <meta name="twitter:creator" content="ldez">
+
+
+    <meta name="og:image" content="https://ldez.github.io/images/amazing-world-golangci-lint-v2.png">
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">
+            Welcome to golangci-lint v2
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2025-03-23</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/golang/">GoLang</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>I am thrilled to announce the release of v2!</p>
+<p>I hope is that these features will enhance your development experience.</p>
+<p>
+<a href="/images/amazing-world-golangci-lint-v2.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/amazing-world-golangci-lint-v2.png"/>
+</a>
+</p>
+<h2 id="-configuration-overhaul">📄 Configuration Overhaul</h2>
+<p>One of the most significant updates in golangci-lint v2 is the revamped configuration structure.</p>
+<h3 id="-simplified-linters-management">🧩 Simplified Linters Management</h3>
+<p>The <code>enable-all</code> and <code>disable-all</code> options have been replaced with a single, more intuitive option: <code>linters.default</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">linters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>: <span style="color:#ae81ff">all</span> <span style="color:#75715e"># standard/all/none/fast</span>
+</span></span></code></pre></div><p>To address the confusion surrounding the previous <code>fast</code> option, v2 introduces two distinct options for using &ldquo;fast&rdquo; linters:</p>
+<ol>
+<li>Fast linters as default: you can now set fast linters as the default set of linters using the <code>linters.default: fast</code> option.
+This ensures that only the fastest linters are used by default.</li>
+<li>Fast linters filter: the <code>--fast-only</code> flag allows you to filter all the linters defined in your configuration to keep only the fast linters.
+This option provides a quick way to focus on performance-critical linters without modifying your configuration file.</li>
+</ol>
+<p>The linter settings have moved to the <code>linters</code> section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">linters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default</span>: <span style="color:#ae81ff">standard</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">misspell</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">settings</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">misspell</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">locale</span>: <span style="color:#ae81ff">US</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">extra-words</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">typo</span>: <span style="color:#e6db74">&#34;iff&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">correction</span>: <span style="color:#e6db74">&#34;if&#34;</span>
+</span></span></code></pre></div><h3 id="-improved-file-paths-management">📁 Improved File Paths Management</h3>
+<p>All options related to file paths are now relative to the configuration file path by default, rather than the location where the binary is launched.
+This change ensures consistency and reduces confusion.</p>
+<p>This behavior is configurable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">relative-path-mode</span>: <span style="color:#ae81ff">cfg</span> <span style="color:#75715e"># cfg, wd, gomod, gitroot.</span>
+</span></span></code></pre></div><p>Inside some linters configuration that use paths,
+you can now use the placeholder <code>${base-path}</code> to refer to the same default location as the golangci-lint options.</p>
+
+<details
+>
+<summary onclick="this.innerHTML = this.parentNode.open ? 'Details' : 'Details';">
+    
+        Details
+    
+</summary>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">linters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">settings</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">gocritic</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">settings</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ruleguard</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">rules</span>: <span style="color:#ae81ff">${base-path}/ruleguard/rules-*.go,${base-path}/myrule1.go</span>
+</span></span></code></pre></div>
+</details>
+<br/>
+<h3 id="-issue-exclusions">🙈 Issue Exclusions</h3>
+<p>In v2, there are no exclusions by default.</p>
+<p>However, you now have the possibility to enable human-readable exclusion presets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">linters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">exclusions</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">presets</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">comments</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">std-error-handling</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">common-false-positives</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">legacy</span>
+</span></span></code></pre></div><p>The unused exclusion rules can be detected and reported as warnings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">linters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">exclusions</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">warn-unused</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">path/to/file.go</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">linters</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">gocyclo</span>
+</span></span></code></pre></div><h2 id="-introducing-the-golangci-lint-fmt-command">🌟 Introducing the <code>golangci-lint fmt</code> Command</h2>
+<p>golangci-lint v2 introduces a new command, <code>golangci-lint fmt</code>, designed to format your code using your preferred formatter or a combination of formatters.</p>
+<p>This command adds a new layer of flexibility to your code formatting process.</p>
+<p>A new section, <code>formatters</code>, has been added to the configuration file.</p>
+<p>This section allows you to specify and configure the formatters used by the <code>golangci-lint fmt</code> command, giving you full control over how your code is formatted.</p>
+<p>The formatters defined in this section are automatically used as &ldquo;linter&rdquo; when you run the command <code>golangci-lint run</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">formatters</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">gofmt</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">goimports</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">settings</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">gofmt</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">simplify</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">rewrite-rules</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">pattern</span>: <span style="color:#ae81ff">interface{}</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">replacement</span>: <span style="color:#ae81ff">any</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">pattern</span>: <span style="color:#ae81ff">a[b:len(a)]</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">replacement</span>: <span style="color:#ae81ff">a[b:]</span>
+</span></span></code></pre></div><h2 id="-seamless-migration">♻️ Seamless Migration</h2>
+<p>To ease the transition to v2, golangci-lint includes a migration command: <code>golangci-lint migrate</code>.
+This command automatically converts your v1 configuration to the new v2 format, ensuring a smooth and hassle-free upgrade process.</p>
+<p>We also created a detailed <a href="https://golangci-lint.run/product/migration-guide/">migration guide</a>.</p>
+<h2 id="-enjoy">❤️ Enjoy</h2>
+<p>For more key updates, see the <a href="https://opencollective.com/redirect?url=https%3A%2F%2Fgolangci-lint.run%2Fproduct%2Fchangelog%2F%23v200">changelog</a>.</p>
+<p>This major release marks an exciting new chapter in the evolution of golangci-lint.</p>
+<p>Golangci-lint, like many other open-source projects, relies on the generosity of its community through donations and corporate sponsorships to support its growth and development.</p>
+<p>So consider donating to the project, as giving back through donations is a wonderful way to say thank you for the work we do.</p>
+<ul>
+<li><a href="https://donate.golangci.org">https://donate.golangci.org</a></li>
+<li><a href="https://donate.ldez.dev">https://donate.ldez.dev</a></li>
+</ul>
+<p>Thank you for being a part of this community, and happy linting with golangci-lint v2!</p>
+<hr>
+<p>The Go gopher was designed by Renee French.<br>
+The design is licensed under the Creative Commons 3.0 Attributions license.<br>
+<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/golangci-lint/">Golangci-Lint</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/golangci/">Golangci</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/linting/">Linting</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/linter/">Linter</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/go/">Go</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/golang/">Golang</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/">Javascript - Héritage &amp; assign/extend</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (22)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (19)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://bento.me/ldez" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2025
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.c6929f2feac193f449f3383cf9db9decec05d4535c004b855bfae822f292ab63.js" integrity="sha256-xpKfL&#43;rBk/RJ8zg8&#43;dud7OwF1FNcAEuFW/roIvKSq2M=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="ldez">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.136.5">
+    <title>
+        
+           
+               Kata Print Diamond &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="Kata Print Diamond">
+    <meta itemprop="description" content="Kata Print Diamond - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="Kata Print Diamond">
+  <meta property="og:description" content="Ce kata définit par Seb Rose a pour but de montrer une approche visant à recycler les tests afin de ne pas créer de phase tunnel de refactor long et massif.
+J’ai donc respecté l’approche TDD pour l’émergence du design et fait des ‘baby step’ en créant des tests pour chacune des étapes afin d’avoir une victoire à chaque fois. (Il est très important d’avoir rapidement un retour positif pour ce que l’on fait)
+Description Étant donné une lettre, imprimer un diamant en commençant par “A” avec la lettre fournie pour point le plus large.
+Par exemple print-diamond ‘C’ affiche :
+A B B C C B B A">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2015-08-22T22:22:38+02:00">
+    <meta property="article:modified_time" content="2019-02-24T03:01:06+01:00">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.37df0d8c4e01d48af9ecde04ff7ca4e01fc9d2456378c25b5b5560c552581f0c.css" integrity="sha256-N98NjE4B1Ir57N4E/3yk4B/J0kVjeMJbW1VgxVJYHww=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">
+            Kata Print Diamond
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2015-08-22</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/java/">Java</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/kata/">Kata</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/tdd/">Tdd</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>Ce kata définit par <a href="http://claysnow.co.uk/recycling-tests-in-tdd/">Seb Rose</a> a pour but de montrer une approche visant à recycler les tests afin de ne pas créer de phase tunnel de refactor long et massif.</p>
+<p>J&rsquo;ai donc respecté l&rsquo;approche TDD pour l&rsquo;émergence du design et fait des &lsquo;<em>baby step</em>&rsquo; en créant des tests pour chacune des étapes afin d&rsquo;avoir une <em>victoire</em> à chaque fois. (Il est très important d&rsquo;avoir rapidement un retour positif pour ce que l&rsquo;on fait)</p>
+<h2 id="description">Description</h2>
+<p>Étant donné une lettre, imprimer un diamant en commençant par &ldquo;A&rdquo; avec la lettre fournie pour point le plus large.</p>
+<p>Par exemple <code>print-diamond ‘C’</code> affiche :</p>
+<pre tabindex="0"><code>  A
+ B B
+C   C
+ B B
+  A
+</code></pre><h2 id="le-déroulé">Le déroulé</h2>
+<h3 id="etape-1">Etape 1</h3>
+<p>A la lecture du kata je pense comprendre que la lettre de départ du Diamant (<code>A</code>) est une constante.</p>
+<p>Je créé la classe <code>DiamondTest</code> et un test pour définir la constante <code>ROOT_LETTER</code>.
+Cela me permet de créer la classe <code>Diamond</code>.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiamondTest</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_have_A_as_root_letter</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        assertEquals(Diamond.<span style="color:#a6e22e">ROOT_LETTER</span>, <span style="color:#e6db74">&#39;A&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Diamond</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> ROOT_LETTER <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="etape-2">Etape 2</h3>
+<p>Je défini un test pour le cas de lettre <code>A</code> et implémente la méthode <code>print</code>.
+La représentation du &lsquo;diamant&rsquo; pour <code>A</code> étant une seule lettre sans espace cela est très facile.
+Pour l&rsquo;instant le code de l&rsquo;implémentation est stupide.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_A_when_widest_letter_is_A</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;A&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    assertEquals(<span style="color:#e6db74">&#34;A&#34;</span>, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Diamond</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> ROOT_LETTER <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="etape-3">Etape 3</h3>
+<p>Le résultat final (afficher le Diamant) me parait trop complexe pour pouvoir définir tout de suite un test unitaire pertinent.</p>
+<p>Je décide donc :</p>
+<ul>
+<li>de créer une classe de tests d&rsquo;intégration avec 2 cas : <code>A</code> et <code>B</code>.</li>
+<li>de commencer par essayer de créer la suite de caractères attendu, sans les répétitions des lettres, uniquement la suite de lettre qui composera chaque ligne.</li>
+</ul>
+<p>Évidemment les tests d&rsquo;acceptation resterons rouge jusqu&rsquo;à ce qu&rsquo;à la résolution complète du kata.</p>
+<p>Tests d&rsquo;acceptation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiamondAcceptanceTest</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABBA_when_widest_letter_is_B</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;B&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; A \n&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;B B\n&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; A &#34;</span>;
+</span></span><span style="display:flex;"><span>        assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je défini un test pour le cas de lettre <code>B</code> avec pour objectif d&rsquo;écrire <code>ABA</code> et je refactore la méthode <code>print</code>.
+Pour l&rsquo;instant le code de la méthode est toujours stupide.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABA_when_widest_letter_is_B</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;B&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Implémenation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;B&#39;</span> <span style="color:#f92672">==</span> widestLetter) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABA&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-4">Etape 4</h3>
+<p>Je recommence comme à l&rsquo;étape précédente mais avec les lettres <code>C</code> et <code>D</code>.</p>
+<p>J&rsquo;ai ajouté chaque test puis fait l&rsquo;implémentation relative à celui ci, afin de ne pas être trop répétitif dans cette article j&rsquo;ai factorisé l&rsquo;explication les cas des lettres <code>C</code> et <code>D</code>.</p>
+<p>Tests d&rsquo;acceptation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCCBA_when_widest_letter_is_C</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;C&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;  A  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; B B \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;C   C\n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; B B \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;  A  &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCDDCBA_when_widest_letter_is_D</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;D&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;   A   \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;  B B  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; C   C \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;D     D\n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; C   C \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;  B B  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;   A   &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCBA_when_widest_letter_is_C</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;C&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCBA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCDCBA_when_widest_letter_is_D</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;D&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCDCBA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;D&#39;</span> <span style="color:#f92672">==</span> widestLetter) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABCDCBA&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;C&#39;</span> <span style="color:#f92672">==</span> widestLetter) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABCBA&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;B&#39;</span> <span style="color:#f92672">==</span> widestLetter) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABA&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-5">Etape 5</h3>
+<p>Le code de l&rsquo;implémentation est stupide mais assez complet pour commencer un refactor du code.</p>
+<p>Pour cela je vais changer de paradigme :</p>
+<ul>
+<li>au lieu de comparer chaque lettre à <code>A</code>, je vais comparer la distance de chaque lettre par rapport à <code>A</code>.</li>
+<li>pourquoi ? parce je trouve plus simple de manipuler des chiffres afin de visualiser les duplications possibles.</li>
+</ul>
+<p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (3 <span style="color:#f92672">==</span> distanceWithRootLetter) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABCDCBA&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (2 <span style="color:#f92672">==</span> distanceWithRootLetter) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABCBA&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (1 <span style="color:#f92672">==</span> distanceWithRootLetter) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABA&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-6">Etape 6</h3>
+<p>Le code de l&rsquo;implémentation est toujours stupide, je vais donc factoriser le code pour en sortir un code plus générique.</p>
+<p>Pour cela je me dis qu&rsquo;une suite de lettre peut être vu comme une suite de distance par rapport à <code>A</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>] <span style="color:#f92672">-&gt;</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>] <span style="color:#f92672">-&gt;</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>] <span style="color:#f92672">-&gt;</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span></code></pre></div><p>L&rsquo;objectif maintenant est de créer une séquence de chiffre représentant cette suite.</p>
+<p>Je connais la distance de la lettre la plus lointaine avec <code>A</code> (que j&rsquo;ai nommé <code>distanceWithRootLetter</code> lors de la précédente étape).</p>
+<p>Créer une suite de ce style c&rsquo;est assez simple, il suffit de créer une suite qui va de <code>-distanceWithRootLetter</code> à <code>distanceWithRootLetter</code> puis d&rsquo;ajouter <code>distanceWithRootLetter</code> à la valeur absolue de chaque valeur de la suite.</p>
+<p>Par exemple pour B :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>] <span style="color:#f92672">-&gt;</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span></code></pre></div><p><code>distanceWithRootLetter = 1</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">distanceWithRootLetter</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">distanceWithRootLetter</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> [<span style="color:#a6e22e">i1</span>, <span style="color:#a6e22e">i2</span>, <span style="color:#a6e22e">i3</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-&gt;</span>
+</span></span><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">distanceWithRootLetter</span> <span style="color:#f92672">-</span> <span style="color:#f92672">|</span><span style="color:#a6e22e">i1</span><span style="color:#f92672">|</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// avec i1 = -distanceWithRootLetter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// donc maintenant la valeur de cette case dans la ligne est de 0.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">distanceWithRootLetter</span> <span style="color:#f92672">-</span> <span style="color:#f92672">|</span><span style="color:#a6e22e">i2</span><span style="color:#f92672">|</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// avec i2 = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// donc maintenant la valeur de cette case dans la ligne est de 1.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">distanceWithRootLetter</span> <span style="color:#f92672">-</span> <span style="color:#f92672">|</span><span style="color:#a6e22e">i3</span><span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// avec i3 = distanceWithRootLetter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// la valeur de cette case dans la ligne est de 0.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span> , <span style="color:#ae81ff">0</span>]
+</span></span></code></pre></div><p>Et voilà il ne me reste plus qu&rsquo;à ajouter cette distance à <code>A</code> pour obtenir la bonne suite de lettre.</p>
+<p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IntStream.<span style="color:#a6e22e">rangeClosed</span>(<span style="color:#f92672">-</span>distanceWithRootLetter, distanceWithRootLetter)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// compute distance</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(number <span style="color:#f92672">-&gt;</span> distanceWithRootLetter <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(number))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert distance to character</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">mapToObj</span>(distance <span style="color:#f92672">-&gt;</span> (<span style="color:#66d9ef">char</span>) (ROOT_LETTER <span style="color:#f92672">+</span> distance))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert to String</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(String::valueOf)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// aggregate letters</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont toujours verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-7">Etape 7</h3>
+<p>Maintenant que je peux générer une suite de lettre correspondante à chacune des lettres attendu sur chaque ligne je vais ajouter des sauts de lignes.</p>
+<p>Je recycle donc les tests pour vérifier cela.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABA_when_widest_letter_is_B</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;B&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A\nB\nA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCBA_when_widest_letter_is_C</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;C&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A\nB\nC\nB\nA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCDCBA_when_widest_letter_is_D</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;D&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A\nB\nC\nD\nC\nB\nA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Cela est rendu très simple par l&rsquo;utilisation des <code>Stream</code> car il suffit de donner le paramètre <code>\n</code> à la fonction <code>joining</code>.</p>
+<p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IntStream.<span style="color:#a6e22e">rangeClosed</span>(<span style="color:#f92672">-</span>distanceWithRootLetter, distanceWithRootLetter)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// compute distance</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(number <span style="color:#f92672">-&gt;</span> distanceWithRootLetter <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(number))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert distance to character</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">mapToObj</span>(distance <span style="color:#f92672">-&gt;</span> (<span style="color:#66d9ef">char</span>) (ROOT_LETTER <span style="color:#f92672">+</span> distance))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert to String</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(String::valueOf)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// aggregate letters</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;\n&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-8">Etape 8</h3>
+<p>J&rsquo;ai obtenu une colonne de caractères correspondant aux caractères attendu sur chaque ligne.</p>
+<p>Je dois maintenant doubler chaque caractère sauf les extrémités contenant la lettre <code>A</code> une seule fois.</p>
+<p>Je recycle donc encore les tests pour vérifier cela.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABA_when_widest_letter_is_B</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;B&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A\nBB\nA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCBA_when_widest_letter_is_C</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;C&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A\nBB\nCC\nBB\nA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCDCBA_when_widest_letter_is_D</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;D&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A\nBB\nCC\nDD\nCC\nBB\nA&#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Pour l&rsquo;implémentation je choisi de représenter ma ligne sous la forme d&rsquo;un tableau pour ne pas avoir à transformer chacun des caractères en une <code>String</code> pour de les agréger.</p>
+<p>En plus la méthode <code>String.valueOf</code> sait transformer un tableau de caractères en <code>String</code>.
+Cette décision pourra être revue mais à cette étape c&rsquo;est la manière la plus simple et la plus rapide.</p>
+<p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IntStream.<span style="color:#a6e22e">rangeClosed</span>(<span style="color:#f92672">-</span>distanceWithRootLetter, distanceWithRootLetter)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// compute distance</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(number <span style="color:#f92672">-&gt;</span> distanceWithRootLetter <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(number))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert distance to character</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">mapToObj</span>(distance <span style="color:#f92672">-&gt;</span> (<span style="color:#66d9ef">char</span>) (ROOT_LETTER <span style="color:#f92672">+</span> distance))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// build a line</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(letter <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (ROOT_LETTER <span style="color:#f92672">==</span> letter) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> { letter };
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> { letter, letter };
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert to String</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(String::valueOf)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// aggregate letters</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;\n&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-9">Etape 9</h3>
+<p>Maintenant j&rsquo;ai le bon caractère sur chaque ligne et le bon nombre de fois le caractère.</p>
+<p>Je recycle donc encore les tests pour créer des lignes de la bonne taille.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABBA_when_widest_letter_is_B</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;B&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BB \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;A  &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCCBA_when_widest_letter_is_C</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;C&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A    \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BB   \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;CC   \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BB   \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;A    &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCDDCBA_when_widest_letter_is_D</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;D&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A      \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BB     \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;CC     \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;DD     \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;CC     \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;BB     \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;A      &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je choisi de conserver la représentation de la ligne sous forme de tableau afin de positionner les caractères dans une ligne au lieu de faire une <code>String</code> et de faire des agrégations de caractère Espace.</p>
+<p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// square size : total number of rows == length of a line</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> squareSize <span style="color:#f92672">=</span> distanceWithRootLetter <span style="color:#f92672">*</span> 2 <span style="color:#f92672">+</span> 1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IntStream.<span style="color:#a6e22e">rangeClosed</span>(<span style="color:#f92672">-</span>distanceWithRootLetter, distanceWithRootLetter)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// compute distance</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(number <span style="color:#f92672">-&gt;</span> distanceWithRootLetter <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(number))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert distance to character</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">mapToObj</span>(distance <span style="color:#f92672">-&gt;</span> (<span style="color:#66d9ef">char</span>) (ROOT_LETTER <span style="color:#f92672">+</span> distance))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// build a line</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(letter <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> line <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span>squareSize<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Fill for replace &#39;null&#39; character with space character</span>
+</span></span><span style="display:flex;"><span>                Arrays.<span style="color:#a6e22e">fill</span>(line, <span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (ROOT_LETTER <span style="color:#f92672">==</span> letter) {
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> line;
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert to String</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(String::valueOf)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// aggregate letters</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;\n&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont verts sauf les tests d&rsquo;acceptation.</p>
+<h3 id="etape-10">Etape 10</h3>
+<p>J&rsquo;ai le bon caractère sur chaque ligne et le bon nombre de fois le caractère et des lignes de la bonne taille, il ne me reste plus qu&rsquo;à placer les caractères afin de former le diamant.</p>
+<p>Je modifie donc les tests pour vérifier cela.</p>
+<p>Tests unitaires :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABBA_when_widest_letter_is_B</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;B&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; A \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;B B\n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; A &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCCBA_when_widest_letter_is_C</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;C&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;  A  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; B B \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;C   C\n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; B B \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;  A  &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">should_print_ABCDDCBA_when_widest_letter_is_D</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    Diamond diamond <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Diamond();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String display <span style="color:#f92672">=</span> diamond.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;D&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String expected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;   A   \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;  B B  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; C   C \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;D     D\n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; C   C \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;  B B  \n&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;   A   &#34;</span>;
+</span></span><span style="display:flex;"><span>    assertEquals(expected, display);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// square size : total number of rows == length of a line</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> squareSize <span style="color:#f92672">=</span> distanceWithRootLetter <span style="color:#f92672">*</span> 2 <span style="color:#f92672">+</span> 1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IntStream.<span style="color:#a6e22e">rangeClosed</span>(<span style="color:#f92672">-</span>distanceWithRootLetter, distanceWithRootLetter)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// compute distance</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(number <span style="color:#f92672">-&gt;</span> distanceWithRootLetter <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(number))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert distance to character</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">mapToObj</span>(distance <span style="color:#f92672">-&gt;</span> (<span style="color:#66d9ef">char</span>) (ROOT_LETTER <span style="color:#f92672">+</span> distance))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// build a line</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(letter <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> line <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span>squareSize<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Fill for replace &#39;null&#39; character with space character</span>
+</span></span><span style="display:flex;"><span>                Arrays.<span style="color:#a6e22e">fill</span>(line, <span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// distance between current letter and root letter</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distance <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(letter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (ROOT_LETTER <span style="color:#f92672">==</span> letter) {
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>distanceWithRootLetter<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>distanceWithRootLetter <span style="color:#f92672">-</span> distance<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>distanceWithRootLetter <span style="color:#f92672">+</span> distance<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> line;
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert to String</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(String::valueOf)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// aggregate letters</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;\n&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mes tests ressemblent exactement aux tests d&rsquo;acceptation, je supprime donc ma classe de tests pour ne garder que les tests d&rsquo;acceptation.</p>
+<p>Tous les tests sont verts !!</p>
+<h3 id="etape-11">Etape 11</h3>
+<p>Je sens qu&rsquo;il y a une forme de duplication entre le positionnement du caractère pour le première ligne et le premier caractère d&rsquo;une ligne du cœur du diamant.</p>
+<p>Un peu de factorisation.</p>
+<p>Implémentation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span> widestLetter) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// distance between ROOT_LETTER and the widest Letter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distanceWithRootLetter <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(widestLetter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// square size : total number of rows == length of a line</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> squareSize <span style="color:#f92672">=</span> distanceWithRootLetter <span style="color:#f92672">*</span> 2 <span style="color:#f92672">+</span> 1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IntStream.<span style="color:#a6e22e">rangeClosed</span>(<span style="color:#f92672">-</span>distanceWithRootLetter, distanceWithRootLetter)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// compute distance</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(number <span style="color:#f92672">-&gt;</span> distanceWithRootLetter <span style="color:#f92672">-</span> Math.<span style="color:#a6e22e">abs</span>(number))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert distance to character</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">mapToObj</span>(distance <span style="color:#f92672">-&gt;</span> (<span style="color:#66d9ef">char</span>) (ROOT_LETTER <span style="color:#f92672">+</span> distance))
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// build a line</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(letter <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> line <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span>squareSize<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Fill for replace &#39;null&#39; character with space character</span>
+</span></span><span style="display:flex;"><span>                Arrays.<span style="color:#a6e22e">fill</span>(line, <span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// distance between current letter and root letter</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> distance <span style="color:#f92672">=</span> Character.<span style="color:#a6e22e">compare</span>(letter, ROOT_LETTER);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// put the first letter in the line</span>
+</span></span><span style="display:flex;"><span>                line<span style="color:#f92672">[</span>distanceWithRootLetter <span style="color:#f92672">-</span> distance<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// if is not the first line, put the second letter</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (ROOT_LETTER <span style="color:#f92672">!=</span> letter) {
+</span></span><span style="display:flex;"><span>                    line<span style="color:#f92672">[</span>distanceWithRootLetter <span style="color:#f92672">+</span> distance<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> letter;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> line;
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// convert to String</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">map</span>(String::valueOf)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// aggregate letters</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;\n&#34;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tous les tests sont toujours verts.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>L&rsquo;erreur classique avec ce kata est de créer 4 tests correspondant à la création finale du diamant pour les lettres <code>A</code>, <code>B</code>, <code>C</code> et <code>D</code> puis de rentrer dans une phase de refactor massif.
+Jusqu&rsquo;à la fin du kata tous les tests échouerons, cela induit que le design ne va pas émerger poussé par les tests.</p>
+<p>C&rsquo;est pour cela que j&rsquo;ai volontairement refactoré/recyclé mes propres tests.</p>
+<p>Le fait d&rsquo;avoir fait des tests puis de les recycler m&rsquo;a permit :</p>
+<ul>
+<li>d&rsquo;avoir des objectifs de petite taille (<em>baby step</em>).</li>
+<li>de créer du code uniquement pour répondre à un test et donc de faire émerger le design.</li>
+<li>d&rsquo;être récompensé à chaque étape en ayant des tests qui sont passés du rouge au vert à chaque fois.</li>
+</ul>
+<p>Vous pourriez vous demander si nous ne risquons pas de produire des régressions en recyclant des tests comme cela.</p>
+<p>Dans ce cas précis nous ne courrons aucun risque :
+En plus de faire un commit à chaque étape, et donc de pouvoir revenir facilement sur la précédente version avec des tests verts, chaque étape procède comme l&rsquo;ajout d&rsquo;une nouvelle fonctionnalité.</p>
+<p>Cela est comparable à l&rsquo;évolution d&rsquo;une application : certaines règles métier peuvent changer.</p>
+<p>Il n&rsquo;est pas nécessaire de conserver le contenu des précédents tests car ils ne seront plus jamais valides.
+Il faut donc faire évoluer les tests correspondants aux nouvelles règles et les faire évoluer.</p>
+<p>Les tests seront donc toujours justes et formeront le filet de sécurité nécessaire à l&rsquo;ajout de la nouvelle règle ou du refactor dans mon cas.
+On comprends à travers cela l&rsquo;importance de bien nommer ses tests afin de facilement cibler une fonctionnalité.</p>
+<p>Un autre point, vous avez aussi pu voir que j&rsquo;ai changé de paradigme en cours de route afin de faciliter l&rsquo;apparition de la duplication et de faciliter la lecture.</p>
+<p>De cela il faut noter que changer d&rsquo;angle de vu, lorsque vous êtes bloqué, allant jusqu&rsquo;à tout réécrire ce que vous veniez de faire, est très positif.
+Rester sur une solution dont on ne voit pas comment arriver à la fin est un piège.
+Prenez du recul, changer d&rsquo;activité, faites une pause, faites tout pour renouveler votre perception et changez d&rsquo;avis !</p>
+<p>Augmenter la duplication permet de tuer toute envie d&rsquo;optimisation trop rapide (YAGNI).</p>
+<p>Pour finir, cette solution utilise les outils que Java 8 nous fournit pour faire de la programmation fonctionnelle et permet d&rsquo;avoir un code plutôt propre et une documentation de bonne qualité.</p>
+<p>Vous trouverez le code complet <a href="https://github.com/ldez/kata-print-diamond/tree/2015_08_22">ldez/kata-print-diamond/2015_08_22</a>, regarder les commits pour voir la construction étape par étape.</p>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/">Javascript - Héritage &amp; assign/extend</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (22)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (19)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://bento.me/ldez" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2025
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.c6929f2feac193f449f3383cf9db9decec05d4535c004b855bfae822f292ab63.js" integrity="sha256-xpKfL&#43;rBk/RJ8zg8&#43;dud7OwF1FNcAEuFW/roIvKSq2M=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>

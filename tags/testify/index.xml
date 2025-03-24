@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testify on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/testify/</link>
+    <description>Recent content in Testify on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2025 02:45:46 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/testify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Take a Mocktail</title>
+      <link>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</link>
+      <pubDate>Tue, 10 Jan 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34; data-dimbox data-dimbox-caption=&#34;Mocktail&#34;&gt;&#xA;  &lt;img alt=&#34;Mocktail&#34; src=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Mocktail: Mock Generator for Strongly-Typed Mocks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mocktail, fruity mocks</title>
+      <link>https://ldez.github.io/blog/2022/06/04/mocktail-fruity-mocks/</link>
+      <pubDate>Sat, 04 Jun 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2022/06/04/mocktail-fruity-mocks/</guid>
+      <description>&lt;p&gt;Naive code generator that creates mock implementation using testify.mock.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

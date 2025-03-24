@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Merge on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/merge/</link>
+    <description>Recent content in Merge on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Feb 2019 12:57:16 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/merge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Myrmica Lobicornis 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</guid>
+      <description>&lt;p&gt;Update and Merge Pull Request.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

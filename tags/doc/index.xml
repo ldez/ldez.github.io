@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Doc on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/doc/</link>
+    <description>Recent content in Doc on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2025 02:32:52 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/doc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I published links inside the pkg.go.dev documentation of my module</title>
+      <link>https://ldez.github.io/blog/2024/10/26/links-godoc-module/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/10/26/links-godoc-module/</guid>
+      <description>&lt;p&gt;While hunting down a package on &lt;a href=&#34;https://pkg.go.dev&#34;&gt;https://pkg.go.dev&lt;/a&gt;, I stumbled upon a delightful surprise in the &amp;ldquo;Links&amp;rdquo; section: there are custom links!!&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/pkggodevlinks-package.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;&#xA;  &lt;img src=&#34;https://ldez.github.io/images/pkggodevlinks-package.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;What is this magic?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

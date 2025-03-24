@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="ldez">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.136.5">
+    <title>
+        
+           
+               Promesse de promesse, promis ? &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="Promesse de promesse, promis ?">
+    <meta itemprop="description" content="Promesse de promesse, promis ? - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="Promesse de promesse, promis ?">
+  <meta property="og:description" content="Lors d’une conversation avec un collègue de travail (Emmanuel Demey), une question est venue :
+Si une promesse prend comme argument de son resolve une promesse, que se passe t’il dans le then de la méthode appelante ?
+Le resultat est une promesse ou une String ?">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2015-05-21T21:43:19+02:00">
+    <meta property="article:modified_time" content="2019-02-24T03:01:06+01:00">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.37df0d8c4e01d48af9ecde04ff7ca4e01fc9d2456378c25b5b5560c552581f0c.css" integrity="sha256-N98NjE4B1Ir57N4E/3yk4B/J0kVjeMJbW1VgxVJYHww=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">
+            Promesse de promesse, promis ?
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2015-05-21</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/javascript/">Javascript</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/promise/">Promise</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/promesse/">Promesse</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>Lors d&rsquo;une conversation avec un collègue de travail (<a href="http://gillespie59.github.io">Emmanuel Demey</a>), une question est venue :</p>
+<p>Si une promesse prend comme argument de son <code>resolve</code> une promesse, que se passe t&rsquo;il dans le <code>then</code> de la méthode appelante ?</p>
+<p>Le resultat est une promesse ou une <code>String</code> ?</p>
+<h2 id="le-code">Le code</h2>
+<h3 id="version-native-">Version native :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">method01</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;start method01&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;resolve method01&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;yeah&#39;</span>);
+</span></span><span style="display:flex;"><span>    }, <span style="color:#ae81ff">5000</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">method02</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;start method02&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;resolve method02&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">method01</span>());
+</span></span><span style="display:flex;"><span>    }, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">method02</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// La question : &#39;data&#39; est une promesse ou une string ?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;then method2&#39;</span>, <span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="version-avec-q-dangularjs-">Version avec <code>$q</code> d&rsquo;AngularJS :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">method01</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;start method01&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">deferred</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$q</span>.<span style="color:#a6e22e">defer</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;resolve method01&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;yeah&#39;</span>);
+</span></span><span style="display:flex;"><span>  }, <span style="color:#ae81ff">5000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">promise</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">method02</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;start method02&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">deferred</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$q</span>.<span style="color:#a6e22e">defer</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;resolve method02&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">method01</span>());
+</span></span><span style="display:flex;"><span>  }, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">deferred</span>.<span style="color:#a6e22e">promise</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">method02</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// La question : &#39;data&#39; est une promesse ou une string ?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;then method2&#39;</span>, <span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="la-réponse">La réponse</h2>
+<p>Réponse à la question : c&rsquo;est une <code>String</code> !</p>
+<p>Résultat :</p>
+<pre tabindex="0"><code>start method02
+resolve method02
+start method01
+resolve method01
+then method2 yeah
+</code></pre><h2 id="pourquoi-">Pourquoi ?</h2>
+<p>Pourquoi <em>&rsquo;then method2 yeah&rsquo;</em> alors que <code>method02</code> est résolue avant <code>method01</code> ?</p>
+<p>Dans la spécification : <a href="https://promisesaplus.com/#point-49">point-49</a></p>
+<blockquote>
+<p>If x is a promise, adopt its state [3.4]:</p>
+<ul>
+<li>If x is pending, promise must remain pending until x is fulfilled or rejected.</li>
+<li>If/when x is fulfilled, fulfill promise with the same value.</li>
+<li>If/when x is rejected, reject promise with the same reason.</li>
+</ul>
+</blockquote>
+<p>Donc <code>method02().then</code> attend la resolution de la promesse retournée par <code>method02</code>.</p>
+<p>Hors cette promesse ne peut être résolue (fin de l&rsquo;appel de la fonction <code>resolve</code>) que lorsque la méthode <code>method01</code> aura fini son traitement en étant résolue ou rejectée.</p>
+<p>Pour être plus clair :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">promesse</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// équivalent à
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">promesse</span>.<span style="color:#a6e22e">then</span>(...)
+</span></span></code></pre></div><h2 id="autres-points-notables">Autres points notables</h2>
+<h3 id="resolve--fonction">Resolve &amp; fonction</h3>
+<p>Il n&rsquo;est pas possible de retourner une fonction en tant que promesse : si une fonction est passée dans le <code>resolve</code>, elle interprétée comme un thenable <code>function(resolve, reject) {...}</code>.</p>
+<p>Voir la spécification : <a href="https://promisesaplus.com/#point-56">point-56</a></p>
+<h3 id="funny-callback">Funny callback</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">method01</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;start method01&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;resolve method01&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;yeah&#39;</span>);
+</span></span><span style="display:flex;"><span>    }, <span style="color:#ae81ff">5000</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">method01</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>); <span style="color:#75715e">// Callback
+</span></span></span></code></pre></div>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/">Javascript - Héritage &amp; assign/extend</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (22)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (19)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://bento.me/ldez" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2025
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.c6929f2feac193f449f3383cf9db9decec05d4535c004b855bfae822f292ab63.js" integrity="sha256-xpKfL&#43;rBk/RJ8zg8&#43;dud7OwF1FNcAEuFW/roIvKSq2M=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>

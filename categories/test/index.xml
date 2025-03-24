@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/categories/test/</link>
+    <description>Recent content in Test on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 03:01:06 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Driven Learning - Go</title>
+      <link>https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/</link>
+      <pubDate>Fri, 04 Dec 2015 22:13:46 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/</guid>
+      <description>&lt;p&gt;Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt;, j&amp;rsquo;ai donc eut l&amp;rsquo;envie de m&amp;rsquo;initier à ce langage.&lt;/p&gt;&#xA;&lt;p&gt;Je me suis demandé comment commencer : faire des tutoriaux, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.&lt;/p&gt;&#xA;&lt;p&gt;Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.&lt;/p&gt;&#xA;&lt;p&gt;C&amp;rsquo;est un kata très simple que je connais bien, je l&amp;rsquo;ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?&lt;/p&gt;&#xA;&lt;p&gt;C&amp;rsquo;est parti !&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

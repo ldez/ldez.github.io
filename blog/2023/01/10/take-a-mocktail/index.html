@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="ldez">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.136.5">
+    <title>
+        
+           
+               Take a Mocktail &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="Take a Mocktail">
+    <meta itemprop="description" content="Take a Mocktail - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="Take a Mocktail">
+  <meta property="og:description" content="Mocktail: Mock Generator for Strongly-Typed Mocks.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2023-01-10T01:18:13+01:00">
+    <meta property="article:modified_time" content="2025-03-23T02:45:46+01:00">
+    <meta property="article:tag" content="Tool">
+    <meta property="article:tag" content="Mock">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Golang">
+    <meta property="article:tag" content="Testify">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.37df0d8c4e01d48af9ecde04ff7ca4e01fc9d2456378c25b5b5560c552581f0c.css" integrity="sha256-N98NjE4B1Ir57N4E/3yk4B/J0kVjeMJbW1VgxVJYHww=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="ldez">
+    <meta name="twitter:title" content="Mocktail: Mock Generator for Strongly-Typed Mocks">
+    <meta name="twitter:image" content="https://ldez.github.io/images/mocktail-social-github.png">
+    
+    <meta name="twitter:creator" content="ldez">
+
+
+    <meta name="og:image" content="https://ldez.github.io/images/mocktail-social-github.png">
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">
+            Take a Mocktail
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2023-01-10</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/lib/">Lib</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>
+<a href="/images/mocktail-social-github.png" data-dimbox data-dimbox-caption="Mocktail">
+  <img alt="Mocktail" src="/images/mocktail-social-github.png"/>
+</a>
+</p>
+<p>Mocktail: Mock Generator for Strongly-Typed Mocks.</p>
+<p>In software development, mocks are important testing pieces used to produce isolation for a targeted code.
+When you need to test a piece of code, in some cases, you want to isolate that tested piece
+— for example, you want to test a service that uses a database, but you don&rsquo;t want to call the real database.</p>
+<p>There are several approaches to answering this problem, but in this article, I’ll only focus on the use of mocks.
+Mocks are simulated objects that mimic a behavior.
+The use of mocks is common and useful, but mocks have certain usage and maintainability constraints.
+Mocks can be simple or complex depending on the size of the tested piece and the complexity of the expected behavior.</p>
+<h2 id="creating-mocks-manually-or-with-a-framework">Creating mocks manually or with a framework</h2>
+<p>Mocks can be used to serve several needs that depend on how the piece that you are trying to replace is used inside the tested code.
+Maybe the object is just needed to compile, maybe the object needs to return always the same thing,
+or maybe the object needs to be &ldquo;smart&rdquo; enough to be able to return the right element based on some parameters.</p>
+<p>The first approach when you need a mock is to create it manually.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">API</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">userID</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Save</span>(<span style="color:#a6e22e">user</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span>) <span style="color:#66d9ef">error</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">ID</span>   	<span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">username</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Domain</span>   <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Service</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">api</span> <span style="color:#a6e22e">API</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">Service</span>) <span style="color:#a6e22e">GetDomain</span>(<span style="color:#a6e22e">userID</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">userID</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;user %q not found&#34;</span>, <span style="color:#a6e22e">userID</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Domain</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Domain</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Domain</span> = <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">username</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">Save</span>(<span style="color:#a6e22e">user</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Domain</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/assert&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/require&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">apiMock</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">getResponse</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">getCallCount</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">saveResponse</span>  <span style="color:#66d9ef">error</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">saveCallCount</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">apiMock</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">_</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">getCallCount</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">getResponse</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">apiMock</span>) <span style="color:#a6e22e">Save</span>(<span style="color:#a6e22e">_</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">saveCallCount</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">saveResponse</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestSimple</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">User</span>{
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">ID</span>:   	<span style="color:#e6db74">&#34;8411fd4127&#34;</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">username</span>: <span style="color:#e6db74">&#34;foo&#34;</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">Domain</span>:   <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">apiMock</span>{
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">getResponse</span>:  <span style="color:#a6e22e">user</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">saveResponse</span>: <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">service</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Service</span>{<span style="color:#a6e22e">api</span>: <span style="color:#a6e22e">mck</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">GetDomain</span>(<span style="color:#e6db74">&#34;8411fd4127&#34;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">NoError</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">assert</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#e6db74">&#34;foo.example.com&#34;</span>, <span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">assert</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">mck</span>.<span style="color:#a6e22e">getCallCount</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">assert</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">mck</span>.<span style="color:#a6e22e">saveCallCount</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The handwritten mocks can be enough in a lot of use cases, but sometimes you can have large objects or complex expected behavior.
+In those cases, the approach will be to use a framework that helps with that level of complexity.</p>
+<p>At Traefik Labs, we use Testify for test assertions.
+<a href="https://github.com/stretchr/testify">Testify</a> is the most popular assertions library in Go,
+it helps to improve the test readability and reduce the size of the test plumbing, and it also contains a mock system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/assert&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/mock&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/require&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">apiMock</span> <span style="color:#66d9ef">struct</span>{ <span style="color:#a6e22e">mock</span>.<span style="color:#a6e22e">Mock</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newAPIMock</span>(<span style="color:#a6e22e">tb</span> <span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">TB</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">apiMock</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">tb</span>.<span style="color:#a6e22e">Helper</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">apiMock</span>{}
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">Mock</span>.<span style="color:#a6e22e">Test</span>(<span style="color:#a6e22e">tb</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">tb</span>.<span style="color:#a6e22e">Cleanup</span>(<span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">AssertExpectations</span>(<span style="color:#a6e22e">tb</span>) })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">apiMock</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">userID</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Called</span>(<span style="color:#a6e22e">userID</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#ae81ff">0</span>).(<span style="color:#f92672">*</span><span style="color:#a6e22e">User</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">apiMock</span>) <span style="color:#a6e22e">Save</span>(<span style="color:#a6e22e">user</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">User</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Called</span>(<span style="color:#a6e22e">user</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestTestify</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">newAPIMock</span>(<span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">service</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Service</span>{<span style="color:#a6e22e">api</span>: <span style="color:#a6e22e">mck</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">User</span>{
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">ID</span>:   	<span style="color:#e6db74">&#34;8411fd4127&#34;</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">username</span>: <span style="color:#e6db74">&#34;foo&#34;</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">Domain</span>:   <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span>.<span style="color:#a6e22e">On</span>(<span style="color:#e6db74">&#34;Get&#34;</span>, <span style="color:#e6db74">&#34;8411fd4127&#34;</span>).<span style="color:#a6e22e">Return</span>(<span style="color:#a6e22e">user</span>).<span style="color:#a6e22e">Once</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span>.<span style="color:#a6e22e">On</span>(<span style="color:#e6db74">&#34;Save&#34;</span>, <span style="color:#a6e22e">user</span>).<span style="color:#a6e22e">Return</span>(<span style="color:#66d9ef">nil</span>).<span style="color:#a6e22e">Once</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">GetDomain</span>(<span style="color:#e6db74">&#34;8411fd4127&#34;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">NoError</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">assert</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#e6db74">&#34;foo.example.com&#34;</span>, <span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The mock system of Testify is great, but you still have to write a lot of things by hand. It is at this moment that you realize you need a generator.</p>
+<h2 id="the-problem-with-generic-generators">The problem with generic generators</h2>
+<p>When our team started working on our latest product, Traefik Hub, we were faced with the need to use mocks for a number of tests.
+At first, we started with simple handwritten mocks. However, we quickly came across a few issues.
+The first problem that we faced with handwritten mocks was the fact that writing that kind of code is extremely repetitive and boring to maintain.
+After some discussion, the team decided to use a tool to generate them.
+There are some existing mock generators in Go, and they are great, but none provided exactly what we wanted.
+We expected to have fluent syntax and strongly typed mocks, and the generated mocks from these generators were weak against changes.</p>
+<p>The generated mocks used a string to call the method, and the arguments were just variadic of interfaces.
+When you are using strongly-typed languages like Go, you always prefer to stay in the world of strongly-typed things!</p>
+<p>The main problem with weakly-typed elements is maintainability:
+when you need to change the signature of a method (adding a new parameter, changing a type, etc.),
+the changes will not be propagated to the mocks, and the compiler will not be able to see if something is broken.</p>
+<p>At this point, the team thought that it was easier to come back to our precious handwritten mocks.
+However, I had a different idea.
+Why not create our own mock generator?</p>
+<p>And that’s how Mocktail was born!</p>
+<h2 id="have-a-mocktail-i-say">Have a Mocktail, I say!</h2>
+<p><a href="https://github.com/traefik/mocktail">Mocktail</a> generates strongly typed mocks and provides a simple, fluent syntax.
+The methods of the mocks have the same signature as the real method signature.
+The number of parameters and the types of those parameters are the same as the real methods.</p>
+<p>Using Mocktail is extremely simple. Create a file called <code>mock_test.go</code> and add directives for the mocks you need (for example, <code>// mocktail:MyObject</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// mocktail:Foo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// mocktail:Bar
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span></code></pre></div><p>Then run Mocktail at the root of your project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ mocktail
+</span></span></code></pre></div><p>You are now able to use your mocks easily!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/assert&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/mock&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;github.com/stretchr/testify/require&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestMocktail</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">newAPIMock</span>(<span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">service</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Service</span>{<span style="color:#a6e22e">api</span>: <span style="color:#a6e22e">mck</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">User</span>{
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">ID</span>:   	<span style="color:#e6db74">&#34;8411fd4127&#34;</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">username</span>: <span style="color:#e6db74">&#34;foo&#34;</span>,
+</span></span><span style="display:flex;"><span>  	<span style="color:#a6e22e">Domain</span>:   <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span>.<span style="color:#a6e22e">OnGet</span>(<span style="color:#e6db74">&#34;8411fd4127&#34;</span>).<span style="color:#a6e22e">TypedReturns</span>(<span style="color:#a6e22e">user</span>).<span style="color:#a6e22e">Once</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">mck</span>.<span style="color:#a6e22e">OnSave</span>(<span style="color:#a6e22e">user</span>).<span style="color:#a6e22e">TypedReturns</span>(<span style="color:#66d9ef">nil</span>).<span style="color:#a6e22e">Once</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">GetDomain</span>(<span style="color:#e6db74">&#34;8411fd4127&#34;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">require</span>.<span style="color:#a6e22e">NoError</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">assert</span>.<span style="color:#a6e22e">Equal</span>(<span style="color:#a6e22e">t</span>, <span style="color:#e6db74">&#34;foo.example.com&#34;</span>, <span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="summing-up">Summing up</h2>
+<p>The good thing about mocktails is that you can go wild with them without any severe side effects — except maybe for a bit of a sugar rush!</p>
+<p>We created Mocktail to serve the needs of our team and tackle the specific issues that we were facing in our process.
+But my sincere hope is that this nifty little tool will be of use to many of you and save you hours of frustration manually creating mocks.</p>
+<p>If you’re eager to try out Mocktail, you’ll find it on <a href="https://github.com/traefik/mocktail">GitHub</a>.</p>
+<hr>
+<p>I published the orignial article inside the Traefik Labs blog: <a href="https://traefik.io/blog/mocktail-the-mock-generator-for-strongly-typed-mocks/">https://traefik.io/blog/mocktail-the-mock-generator-for-strongly-typed-mocks/</a></p>
+<p>The article has been promoted inside the Go Weekly Newsletter: <a href="https://golangweekly.com/issues/445">https://golangweekly.com/issues/445</a></p>
+<p>I very happy and proud of that.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/tool/">Tool</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/mock/">Mock</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/go/">Go</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/golang/">Golang</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/testify/">Testify</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/">Javascript - Héritage &amp; assign/extend</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (22)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (19)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://bento.me/ldez" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2025
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.c6929f2feac193f449f3383cf9db9decec05d4535c004b855bfae822f292ab63.js" integrity="sha256-xpKfL&#43;rBk/RJ8zg8&#43;dud7OwF1FNcAEuFW/roIvKSq2M=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>

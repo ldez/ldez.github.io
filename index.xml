@@ -1,0 +1,490 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/</link>
+    <description>Recent content on The Best Code is No Code At All</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2025 01:18:13 +0100</lastBuildDate>
+    
+        <atom:link href="https://ldez.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to golangci-lint v2</title>
+      <link>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</guid>
+      <description>&lt;p&gt;I am thrilled to announce the release of v2!&lt;/p&gt;
+&lt;p&gt;I hope is that these features will enhance your development experience.&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;
+  &lt;img src=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34;/&gt;
+&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>exptostd</title>
+      <link>https://ldez.github.io/blog/2024/12/22/exptostd/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/12/22/exptostd/</guid>
+      <description>&lt;p&gt;Detects functions from golang.org/x/exp/ that can be replaced by std functions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Usetesting</title>
+      <link>https://ldez.github.io/blog/2024/11/24/usetesting/</link>
+      <pubDate>Sun, 24 Nov 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/11/24/usetesting/</guid>
+      <description>&lt;p&gt;Detects when some calls can be replaced by methods from the testing package.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How I published links inside the pkg.go.dev documentation of my module</title>
+      <link>https://ldez.github.io/blog/2024/10/26/links-godoc-module/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/10/26/links-godoc-module/</guid>
+      <description>&lt;p&gt;While hunting down a package on &lt;a href=&#34;https://pkg.go.dev&#34;&gt;https://pkg.go.dev&lt;/a&gt;, I stumbled upon a delightful surprise in the &amp;ldquo;Links&amp;rdquo; section: there are custom links!!&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://ldez.github.io/images/pkggodevlinks-package.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;
+  &lt;img src=&#34;https://ldez.github.io/images/pkggodevlinks-package.png&#34;/&gt;
+&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;What is this magic?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Distributarepo</title>
+      <link>https://ldez.github.io/blog/2024/07/07/distributarepo/</link>
+      <pubDate>Sun, 07 Jul 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/07/07/distributarepo/</guid>
+      <description>&lt;p&gt;Helper to get an overview of the forks of a GitHub repository.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GHBan</title>
+      <link>https://ldez.github.io/blog/2024/05/12/ghban/</link>
+      <pubDate>Sun, 12 May 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/05/12/ghban/</guid>
+      <description>&lt;p&gt;To block multiple accounts across multiple organizations.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Modupwiz</title>
+      <link>https://ldez.github.io/blog/2024/02/14/modupwiz/</link>
+      <pubDate>Wed, 14 Feb 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/02/14/modupwiz/</guid>
+      <description>&lt;p&gt;Modules Update Wizard (modupwiz) is a helper to manage dependency updates.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mail-in-a-Box Go Client</title>
+      <link>https://ldez.github.io/blog/2024/02/11/mail-in-a-box-go-client/</link>
+      <pubDate>Sun, 11 Feb 2024 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2024/02/11/mail-in-a-box-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing Mail-in-a-Box API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nodion DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2023/02/05/nodion-dns-go-client/</link>
+      <pubDate>Sun, 05 Feb 2023 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2023/02/05/nodion-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing Nodion API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Take a Mocktail</title>
+      <link>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</link>
+      <pubDate>Tue, 10 Jan 2023 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34; data-dimbox data-dimbox-caption=&#34;Mocktail&#34;&gt;
+  &lt;img alt=&#34;Mocktail&#34; src=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34;/&gt;
+&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Mocktail: Mock Generator for Strongly-Typed Mocks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mocktail, fruity mocks</title>
+      <link>https://ldez.github.io/blog/2022/06/04/mocktail-fruity-mocks/</link>
+      <pubDate>Sat, 04 Jun 2022 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2022/06/04/mocktail-fruity-mocks/</guid>
+      <description>&lt;p&gt;Naive code generator that creates mock implementation using testify.mock.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>traefik-certs-cleaner</title>
+      <link>https://ldez.github.io/blog/2022/01/23/traefik-certs-cleaner/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2022/01/23/traefik-certs-cleaner/</guid>
+      <description>&lt;p&gt;A simple helper to clean the Traefik &lt;code&gt;acme.json&lt;/code&gt; file by removing and revoking certificates.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mime-types as constants</title>
+      <link>https://ldez.github.io/blog/2022/01/01/mime-types-as-constants/</link>
+      <pubDate>Sat, 01 Jan 2022 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2022/01/01/mime-types-as-constants/</guid>
+      <description>&lt;p&gt;A Go module that provides mime-types as constants.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Freemyip DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2021/07/04/freemyip-dns-go-client/</link>
+      <pubDate>Sun, 04 Jul 2021 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2021/07/04/freemyip-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the freemyip.com API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Porkbun DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2021/05/01/porkbun-dns-go-client/</link>
+      <pubDate>Sat, 01 May 2021 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2021/05/01/porkbun-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Porkdun API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tagliatelle</title>
+      <link>https://ldez.github.io/blog/2021/04/11/tagliatelle/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2021/04/11/tagliatelle/</guid>
+      <description>&lt;p&gt;A linter that handles Go struct tags.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Libraries Comparison About Word Cases</title>
+      <link>https://ldez.github.io/blog/2021/04/11/libraries-comparison-about-word-cases/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:12 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2021/04/11/libraries-comparison-about-word-cases/</guid>
+      <description>&lt;p&gt;Comparison of Word Cases Manipulations Libraries.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GoModDirectives</title>
+      <link>https://ldez.github.io/blog/2021/03/04/gomoddirectives/</link>
+      <pubDate>Thu, 04 Mar 2021 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2021/03/04/gomoddirectives/</guid>
+      <description>&lt;p&gt;A linter that handle &lt;code&gt;replace&lt;/code&gt;, &lt;code&gt;retract&lt;/code&gt;, &lt;code&gt;exclude&lt;/code&gt; directives into &lt;code&gt;go.mod&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Paerser</title>
+      <link>https://ldez.github.io/blog/2020/08/25/paerser/</link>
+      <pubDate>Tue, 25 Aug 2020 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2020/08/25/paerser/</guid>
+      <description>&lt;p&gt;Parses and loads configuration from many sources.
+CLI flags, YAML, TOML, JSON, and environment variables.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SemGo</title>
+      <link>https://ldez.github.io/blog/2020/08/14/semgo/</link>
+      <pubDate>Fri, 14 Aug 2020 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2020/08/14/semgo/</guid>
+      <description>&lt;p&gt;Keeps Go version in SemaphoreCI up to date.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lasius Mixtus 🐜</title>
+      <link>https://ldez.github.io/blog/2020/08/05/lasius-mixtus/</link>
+      <pubDate>Wed, 05 Aug 2020 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2020/08/05/lasius-mixtus/</guid>
+      <description>&lt;p&gt;Publish Documentation on a GitHub Repository.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>deSEC DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2020/05/13/desec-dns-go-client/</link>
+      <pubDate>Wed, 13 May 2020 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2020/05/13/desec-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the deSEC API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Grignotin</title>
+      <link>https://ldez.github.io/blog/2020/02/29/grignotin/</link>
+      <pubDate>Sat, 29 Feb 2020 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2020/02/29/grignotin/</guid>
+      <description>&lt;p&gt;A collection of small helpers around Go proxy, Go meta information, etc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Deptomod</title>
+      <link>https://ldez.github.io/blog/2019/10/09/deptomod/</link>
+      <pubDate>Wed, 09 Oct 2019 01:01:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/10/09/deptomod/</guid>
+      <description>&lt;p&gt;Enhanced migration from dep to go modules.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Seihon</title>
+      <link>https://ldez.github.io/blog/2019/04/29/seihon/</link>
+      <pubDate>Mon, 29 Apr 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/04/29/seihon/</guid>
+      <description>&lt;p&gt;A simple tool to publish multi-arch images on the Docker Hub.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Namesilo DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2019/03/20/namesilo-dns-go-client/</link>
+      <pubDate>Wed, 20 Mar 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/03/20/namesilo-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Namesilo API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GHActions</title>
+      <link>https://ldez.github.io/blog/2019/02/17/ghactions/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/02/17/ghactions/</guid>
+      <description>&lt;p&gt;Create a Github Action in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mjolnir</title>
+      <link>https://ldez.github.io/blog/2019/02/17/mjolnir/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/02/17/mjolnir/</guid>
+      <description>&lt;p&gt;A GitHub Action to close issues related to a merged pull request.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>traefik-certs-dumper</title>
+      <link>https://ldez.github.io/blog/2019/02/10/traefik-certs-dumper/</link>
+      <pubDate>Sun, 10 Feb 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/02/10/traefik-certs-dumper/</guid>
+      <description>&lt;p&gt;Dump ACME data from Traefik to certificates.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Aurora DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2019/02/01/aurora-dns-go-client/</link>
+      <pubDate>Fri, 01 Feb 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/02/01/aurora-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Aurora DNS API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NRDCG - The natural reserve of DNS clients in Go</title>
+      <link>https://ldez.github.io/blog/2019/02/01/nrdcg-the-natural-reserve-of-dns-clients-in-go/</link>
+      <pubDate>Fri, 01 Feb 2019 01:17:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/02/01/nrdcg-the-natural-reserve-of-dns-clients-in-go/</guid>
+      <description>&lt;p&gt;The natural reserve of DNS clients in Go.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>motoko</title>
+      <link>https://ldez.github.io/blog/2019/01/13/motoko/</link>
+      <pubDate>Sun, 13 Jan 2019 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2019/01/13/motoko/</guid>
+      <description>&lt;p&gt;A tool, based on Go modules, to update a dependency to a major version.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GTI</title>
+      <link>https://ldez.github.io/blog/2018/12/30/gti/</link>
+      <pubDate>Sun, 30 Dec 2018 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2018/12/30/gti/</guid>
+      <description>&lt;p&gt;A port of gti in Go. (because it&amp;rsquo;s fun)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>listrandom</title>
+      <link>https://ldez.github.io/blog/2018/03/17/listrandom/</link>
+      <pubDate>Sat, 17 Mar 2018 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2018/03/17/listrandom/</guid>
+      <description>&lt;p&gt;A simple tool to randomize a list. No backend, only on browser.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go-semaphoreci</title>
+      <link>https://ldez.github.io/blog/2018/01/28/go-semaphoreci/</link>
+      <pubDate>Sun, 28 Jan 2018 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2018/01/28/go-semaphoreci/</guid>
+      <description>&lt;p&gt;Go library for accessing the Semaphore CI API.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Messor Structor 🐜</title>
+      <link>https://ldez.github.io/blog/2018/01/14/messor-structor/</link>
+      <pubDate>Sun, 14 Jan 2018 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2018/01/14/messor-structor/</guid>
+      <description>&lt;p&gt;Manage multiple documentation versions with Mkdocs.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Myrmica Gallienii 🐜</title>
+      <link>https://ldez.github.io/blog/2017/09/10/myrmica-gallienii/</link>
+      <pubDate>Sun, 10 Sep 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/09/10/myrmica-gallienii/</guid>
+      <description>&lt;p&gt;Keep Forks Synchronized.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GHWebHook</title>
+      <link>https://ldez.github.io/blog/2017/08/06/ghwebhook/</link>
+      <pubDate>Sun, 06 Aug 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/08/06/ghwebhook/</guid>
+      <description>&lt;p&gt;Create a Github WebHook in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Myrmica Aloba 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</link>
+      <pubDate>Sun, 30 Jul 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</guid>
+      <description>&lt;p&gt;Add labels and milestone on pull requests and issues.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Myrmica Bibikoffi 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</guid>
+      <description>&lt;p&gt;Closes stale issues.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Myrmica Lobicornis 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</guid>
+      <description>&lt;p&gt;Update and Merge Pull Request.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PRM</title>
+      <link>https://ldez.github.io/blog/2017/06/11/prm/</link>
+      <pubDate>Sun, 11 Jun 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/06/11/prm/</guid>
+      <description>&lt;p&gt;Pull Request Manager for Maintainers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go-git-cmd-wrapper</title>
+      <link>https://ldez.github.io/blog/2017/06/04/go-git-cmd-wrapper/</link>
+      <pubDate>Sun, 04 Jun 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/06/04/go-git-cmd-wrapper/</guid>
+      <description>&lt;p&gt;A simple wrapper around git command in Go.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GCG</title>
+      <link>https://ldez.github.io/blog/2017/05/14/gcg/</link>
+      <pubDate>Sun, 14 May 2017 01:18:13 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2017/05/14/gcg/</guid>
+      <description>&lt;p&gt;A GitHub Changelog Generator.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Test Driven Learning - Go</title>
+      <link>https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/</link>
+      <pubDate>Fri, 04 Dec 2015 22:13:46 +0100</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/</guid>
+      <description>&lt;p&gt;Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt;, j&amp;rsquo;ai donc eut l&amp;rsquo;envie de m&amp;rsquo;initier à ce langage.&lt;/p&gt;
+&lt;p&gt;Je me suis demandé comment commencer : faire des tutoriaux, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.&lt;/p&gt;
+&lt;p&gt;Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est un kata très simple que je connais bien, je l&amp;rsquo;ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est parti !&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kata Print Diamond</title>
+      <link>https://ldez.github.io/blog/2015/08/22/kata-print-diamond/</link>
+      <pubDate>Sat, 22 Aug 2015 22:22:38 +0200</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2015/08/22/kata-print-diamond/</guid>
+      <description>&lt;p&gt;Ce kata définit par &lt;a href=&#34;http://claysnow.co.uk/recycling-tests-in-tdd/&#34;&gt;Seb Rose&lt;/a&gt; a pour but de montrer une approche visant à recycler les tests afin de ne pas créer de phase tunnel de refactor long et massif.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai donc respecté l&amp;rsquo;approche TDD pour l&amp;rsquo;émergence du design et fait des &amp;lsquo;&lt;em&gt;baby step&lt;/em&gt;&amp;rsquo; en créant des tests pour chacune des étapes afin d&amp;rsquo;avoir une &lt;em&gt;victoire&lt;/em&gt; à chaque fois. (Il est très important d&amp;rsquo;avoir rapidement un retour positif pour ce que l&amp;rsquo;on fait)&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Étant donné une lettre, imprimer un diamant en commençant par &amp;ldquo;A&amp;rdquo; avec la lettre fournie pour point le plus large.&lt;/p&gt;
+&lt;p&gt;Par exemple &lt;code&gt;print-diamond ‘C’&lt;/code&gt; affiche :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  A
+ B B
+C   C
+ B B
+  A
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Promesse de promesse, promis ?</title>
+      <link>https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/</link>
+      <pubDate>Thu, 21 May 2015 21:43:19 +0200</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/</guid>
+      <description>&lt;p&gt;Lors d&amp;rsquo;une conversation avec un collègue de travail (&lt;a href=&#34;http://gillespie59.github.io&#34;&gt;Emmanuel Demey&lt;/a&gt;), une question est venue :&lt;/p&gt;
+&lt;p&gt;Si une promesse prend comme argument de son &lt;code&gt;resolve&lt;/code&gt; une promesse, que se passe t&amp;rsquo;il dans le &lt;code&gt;then&lt;/code&gt; de la méthode appelante ?&lt;/p&gt;
+&lt;p&gt;Le resultat est une promesse ou une &lt;code&gt;String&lt;/code&gt; ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Javascript - Héritage &amp; assign/extend</title>
+      <link>https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/</link>
+      <pubDate>Wed, 22 Apr 2015 02:14:44 +0200</pubDate>
+      
+      <guid>https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/</guid>
+      <description>&lt;p&gt;Une petite reflexion autour de l&amp;rsquo;héritage en Javascript ES5.&lt;/p&gt;
+&lt;h2 id=&#34;assignextend&#34;&gt;Assign/Extend&lt;/h2&gt;
+&lt;h3 id=&#34;example-1-1&#34;&gt;Example 1-1&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// one
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(){ &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;; } };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// two
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;two&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Object.&lt;span style=&#34;color:#a6e22e&#34;&gt;assign&lt;/span&gt;({}, &lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;two&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;two&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

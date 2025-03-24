@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lib on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/lib/</link>
+    <description>Recent content in Lib on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Feb 2024 00:36:59 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/lib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mail-in-a-Box Go Client</title>
+      <link>https://ldez.github.io/blog/2024/02/11/mail-in-a-box-go-client/</link>
+      <pubDate>Sun, 11 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/02/11/mail-in-a-box-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing Mail-in-a-Box API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nodion DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2023/02/05/nodion-dns-go-client/</link>
+      <pubDate>Sun, 05 Feb 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2023/02/05/nodion-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing Nodion API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mime-types as constants</title>
+      <link>https://ldez.github.io/blog/2022/01/01/mime-types-as-constants/</link>
+      <pubDate>Sat, 01 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2022/01/01/mime-types-as-constants/</guid>
+      <description>&lt;p&gt;A Go module that provides mime-types as constants.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Freemyip DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2021/07/04/freemyip-dns-go-client/</link>
+      <pubDate>Sun, 04 Jul 2021 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/07/04/freemyip-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the freemyip.com API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Porkbun DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2021/05/01/porkbun-dns-go-client/</link>
+      <pubDate>Sat, 01 May 2021 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/05/01/porkbun-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Porkdun API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Paerser</title>
+      <link>https://ldez.github.io/blog/2020/08/25/paerser/</link>
+      <pubDate>Tue, 25 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/08/25/paerser/</guid>
+      <description>&lt;p&gt;Parses and loads configuration from many sources.&#xA;CLI flags, YAML, TOML, JSON, and environment variables.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>deSEC DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2020/05/13/desec-dns-go-client/</link>
+      <pubDate>Wed, 13 May 2020 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/05/13/desec-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the deSEC API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Grignotin</title>
+      <link>https://ldez.github.io/blog/2020/02/29/grignotin/</link>
+      <pubDate>Sat, 29 Feb 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/02/29/grignotin/</guid>
+      <description>&lt;p&gt;A collection of small helpers around Go proxy, Go meta information, etc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Namesilo DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2019/03/20/namesilo-dns-go-client/</link>
+      <pubDate>Wed, 20 Mar 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/03/20/namesilo-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Namesilo API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GHActions</title>
+      <link>https://ldez.github.io/blog/2019/02/17/ghactions/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/ghactions/</guid>
+      <description>&lt;p&gt;Create a Github Action in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aurora DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2019/02/01/aurora-dns-go-client/</link>
+      <pubDate>Fri, 01 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/01/aurora-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Aurora DNS API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NRDCG - The natural reserve of DNS clients in Go</title>
+      <link>https://ldez.github.io/blog/2019/02/01/nrdcg-the-natural-reserve-of-dns-clients-in-go/</link>
+      <pubDate>Fri, 01 Feb 2019 01:17:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/01/nrdcg-the-natural-reserve-of-dns-clients-in-go/</guid>
+      <description>&lt;p&gt;The natural reserve of DNS clients in Go.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>go-semaphoreci</title>
+      <link>https://ldez.github.io/blog/2018/01/28/go-semaphoreci/</link>
+      <pubDate>Sun, 28 Jan 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2018/01/28/go-semaphoreci/</guid>
+      <description>&lt;p&gt;Go library for accessing the Semaphore CI API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GHWebHook</title>
+      <link>https://ldez.github.io/blog/2017/08/06/ghwebhook/</link>
+      <pubDate>Sun, 06 Aug 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/08/06/ghwebhook/</guid>
+      <description>&lt;p&gt;Create a Github WebHook in 5 seconds! (in Golang)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>go-git-cmd-wrapper</title>
+      <link>https://ldez.github.io/blog/2017/06/04/go-git-cmd-wrapper/</link>
+      <pubDate>Sun, 04 Jun 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/06/04/go-git-cmd-wrapper/</guid>
+      <description>&lt;p&gt;A simple wrapper around git command in Go.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

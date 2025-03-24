@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="ldez">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.136.5">
+    <title>
+        
+           
+               Test Driven Learning - Go &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="Test Driven Learning - Go">
+    <meta itemprop="description" content="Test Driven Learning - Go - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="Test Driven Learning - Go">
+  <meta property="og:description" content="Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de Docker, j’ai donc eut l’envie de m’initier à ce langage.
+Je me suis demandé comment commencer : faire des tutoriaux, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
+Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.
+C’est un kata très simple que je connais bien, je l’ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?
+C’est parti !">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2015-12-04T22:13:46+01:00">
+    <meta property="article:modified_time" content="2019-02-24T03:01:06+01:00">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.37df0d8c4e01d48af9ecde04ff7ca4e01fc9d2456378c25b5b5560c552581f0c.css" integrity="sha256-N98NjE4B1Ir57N4E/3yk4B/J0kVjeMJbW1VgxVJYHww=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">
+            Test Driven Learning - Go
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2015-12-04</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/golang/">GoLang</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/test/">Test</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/tdl/">TDL</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de <a href="https://www.docker.com">Docker</a>, j&rsquo;ai donc eut l&rsquo;envie de m&rsquo;initier à ce langage.</p>
+<p>Je me suis demandé comment commencer : faire des tutoriaux, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.</p>
+<p>Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.</p>
+<p>C&rsquo;est un kata très simple que je connais bien, je l&rsquo;ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?</p>
+<p>C&rsquo;est parti !</p>
+<h2 id="point-de-départ">Point de départ</h2>
+<p>Le site officiel de Go : <a href="https://golang.org">https://golang.org</a>.</p>
+<p>Pour commencer, j&rsquo;ai installé Go.</p>
+<p>C&rsquo;est plutôt simple, tout se trouve à cette adresse suivante : <a href="https://golang.org/dl">https://golang.org/dl</a>.</p>
+<p>Après il me fallait un minimum de documentation sur le langage.</p>
+<p>N&rsquo;étant pas un grand fan de StackOverflow, j&rsquo;aime les sites contenant la documentation et les samples officiels.</p>
+<p>J&rsquo;ai trouvé 4 points d&rsquo;entrées qui m&rsquo;ont semblé pertinent :</p>
+<ul>
+<li><a href="https://golang.org/doc">https://golang.org/doc</a></li>
+<li><a href="https://golang.org/doc/effective_go.html">https://golang.org/doc/effective_go.html</a></li>
+<li><a href="https://golang.org/doc/code.html">https://golang.org/doc/code.html</a></li>
+<li><a href="https://golang.org/ref/spec">https://golang.org/ref/spec</a></li>
+<li><a href="https://github.com/golang/go/wiki">https://github.com/golang/go/wiki</a></li>
+</ul>
+<h2 id="la-structure">La structure</h2>
+<p>La question de base pour commencer correctement avec un langage c&rsquo;est la structure d&rsquo;un projet. Pour Go, il a été facile de trouver cela sur le site officiel : <a href="https://golang.org/doc/code.html">https://golang.org/doc/code.html</a></p>
+<pre tabindex="0"><code>&lt;GOPATH&gt;
+├── bin/
+│   ├── hello                          # command executable
+│   └── outyet                         # command executable
+├── pkg/
+│   └── linux_amd64/
+│       └── github.com/golang/example/
+│           └── stringutil.a           # package object
+└── src/
+    ├── github.com/golang/example/
+    │   └── .git/                      # Git repository metadata
+    ├── hello/
+    │   └── hello.go                   # command source
+    ├── outyet/
+    │   ├── main.go                    # command source
+    │   └── main_test.go               # test source
+    └── stringutil/
+        ├── reverse.go                 # package source
+        └── reverse_test.go            # test source
+</code></pre><p>Normalement lors de l&rsquo;installation la variable d&rsquo;environnement <code>GOROOT</code>, pointant vers les binaires de Go, a du être crée.</p>
+<p><strong>IMPORTANT:</strong> En plus de <code>GOROOT</code>, il faut définir la variable d&rsquo;environnement <code>GOPATH</code> qui doit pointer vers la racine du workspace du projet (cf structure ci-dessus).
+Plus d&rsquo;informations : <a href="https://golang.org/doc/code.html#GOPATH">https://golang.org/doc/code.html#GOPATH</a></p>
+<p>J&rsquo;ai créé uniquement la structure suivante :</p>
+<pre tabindex="0"><code>gohome
+├── bin/
+├── pkg/
+└── src/
+    └── fizzbuzz/
+</code></pre><h2 id="les-tests">Les tests</h2>
+<p>Après cela il me fallait comprendre comment fonctionnait les tests avec Go.</p>
+<p>Je ne voulais pas trop rentrer dans le langage tant que je savais pas comment faire un test.</p>
+<p>Une petite fouille sur le site de Go et le dépôt GitHub officiels et hop :</p>
+<ul>
+<li><a href="https://github.com/golang/go/wiki/LearnTesting">https://github.com/golang/go/wiki/LearnTesting</a></li>
+<li><a href="https://blog.golang.org/examples">https://blog.golang.org/examples</a></li>
+<li><a href="https://github.com/golang-samples/testing">https://github.com/golang-samples/testing</a></li>
+<li><a href="https://golang.org/pkg/testing">https://golang.org/pkg/testing</a></li>
+</ul>
+<p>Un point important dans Go est le fonctionnement de sa bibliothèque de tests :</p>
+<p><em>Citation, <a href="https://golang.org/doc/faq#assertions">https://golang.org/doc/faq#assertions</a></em></p>
+<blockquote>
+<p>Why does Go not have assertions?</p>
+<p>Go doesn&rsquo;t provide assertions.
+They are undeniably convenient, but our experience has been that programmers use them as a crutch to avoid thinking about proper error handling and reporting.
+Proper error handling means that servers continue operation after non-fatal errors instead of crashing.
+Proper error reporting means that errors are direct and to the point, saving the programmer from interpreting a large crash trace.
+Precise errors are particularly important when the programmer seeing the errors is not familiar with the code.</p>
+<p>We understand that this is a point of contention.
+There are many things in the Go language and libraries that differ from modern practices, simply because we feel it&rsquo;s sometimes worth trying a different approach.</p>
+</blockquote>
+<p>Il n&rsquo;y a donc pas d&rsquo;assertions de base dans Go mais juste une structure permettant <em>d&rsquo;enregistrer les erreurs</em>.</p>
+<p>J&rsquo;ai trouvé cela dans la documentation de Go :</p>
+<p><em><a href="https://golang.org/doc/code.html#Testing">https://golang.org/doc/code.html#Testing</a></em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">stringutil</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;testing&#34;</span> <span style="color:#75715e">// &lt;1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestReverse</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) { <span style="color:#75715e">// &lt;2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> []<span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">in</span>, <span style="color:#a6e22e">want</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  }{
+</span></span><span style="display:flex;"><span>    {<span style="color:#e6db74">&#34;Hello, world&#34;</span>, <span style="color:#e6db74">&#34;dlrow, olleH&#34;</span>},
+</span></span><span style="display:flex;"><span>    {<span style="color:#e6db74">&#34;Hello, 世界&#34;</span>, <span style="color:#e6db74">&#34;界世, olleH&#34;</span>},
+</span></span><span style="display:flex;"><span>    {<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>},
+</span></span><span style="display:flex;"><span>  } {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">got</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Reverse</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">in</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">got</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">want</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Reverse(%q) == %q, want %q&#34;</span>, <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">in</span>, <span style="color:#a6e22e">got</span>, <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">want</span>) <span style="color:#75715e">// &lt;3&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>(1) importation de la bibliothèque de tests</li>
+<li>(2) paramètre de la méthode pour accéder au framework de tests</li>
+<li>(3) émission d&rsquo;une erreur (échec du test)</li>
+</ul>
+<p>Dans la documentation, il est aussi dit que les fichiers de tests doivent se terminer par <code>_test.go</code> et que chaque méthode de test doit avoir la forme <code>TestXXX</code>.</p>
+<h3 id="couverture-de-code">Couverture de code</h3>
+<p>Pour compléter les tests, j&rsquo;avais aussi besoin de connaître la couverture du code par les tests.</p>
+<p>Après quelques recherches sur le blog de Go, j&rsquo;ai trouvé cet article : <a href="https://blog.golang.org/cover">The cover story</a></p>
+<p>Pour voir la couverture :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go test -cover
+</span></span></code></pre></div><p>Il est possible de créer un rapport avec les statistiques de couverture du code (coverage profile) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go test -coverprofile<span style="color:#f92672">=</span>coverage.out
+</span></span></code></pre></div><p>Le flag <code>-coverprofile</code> définit automatiquement le flag <code>-cover</code> afin d&rsquo;activer l&rsquo;analyse de la couverture.</p>
+<p>Il est possible jouer sur les données du rapport grâce à l&rsquo;option <code>-covermode</code>.</p>
+<pre tabindex="0"><code>-covermode &lt;option&gt;
+</code></pre><ul>
+<li><code>set</code>: est-ce chaque instruction est exécutée ? (par défaut)</li>
+<li><code>count</code>: combien de fois chaque instruction est exécutée ?</li>
+<li><code>atomic</code>: comme <code>count</code>, mais compte précisément dans les programmes parallélisés</li>
+</ul>
+<p>Pour visualiser le rapport généré pour chaque fonction :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go tool cover -func<span style="color:#f92672">=</span>coverage.out
+</span></span></code></pre></div><p>Pour visualiser le rapport sous une forme plus visuelle, il est possible produire une page HTML.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go tool cover -html<span style="color:#f92672">=</span>coverage.out
+</span></span></code></pre></div><p>Cette commande génère un fichier HTML dans le dossier temporaire de l&rsquo;utilisateur et l&rsquo;ouvre dans le navigateur par défaut.</p>
+<p>Pour voir l&rsquo;aide de <code>tool cover</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go tool cover
+</span></span></code></pre></div><p>Voilà je me sens prêt à commencer.</p>
+<p>Je ne connais pas encore le langage mais je sais comment écrire et éxéxuter un test !</p>
+<h2 id="ide">IDE</h2>
+<p>Pour pouvoir écrire du code, un bon outil c&rsquo;est important.</p>
+<p>Donc je suis parti à la recherche d&rsquo;un IDE pour Go.</p>
+<p>Premier test avec mes IDE habituels, car oui j&rsquo;utilise plusieurs IDE.</p>
+<p>Donc j&rsquo;ouvre Brackets, IntelliJ et Eclipse à la recherche du support langage.</p>
+<p>Je ne trouve rien de très pertinent.</p>
+<p>Je suppose que VIM doit avoir un support mais n&rsquo;étant pas un grand habitué de cet éditeur je décide de continuer à chercher.</p>
+<p>Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :</p>
+<ul>
+<li><a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins</a></li>
+</ul>
+<p>Je décide donc de tester <a href="https://github.com/visualfc/liteide">LiteIDE</a>.
+Super autocomplétion des bibliothèques, le style de l&rsquo;IDE est moche mais bon s&rsquo;il va bien c&rsquo;est OK.
+Mais <em>fail</em> car le support du clavier est destiné uniquement au clavier QWERTY.</p>
+<p>Donc c&rsquo;est reparti pour tester un nouvel IDE.</p>
+<p>J&rsquo;avais déjà installé <a href="https://atom.io">Atom</a> donc je regarde les plugins disponible et surprise :</p>
+<ul>
+<li><a href="https://atom.io/packages/language-go">language-go</a></li>
+<li><a href="https://atom.io/packages/go-plus">go-plus</a> : <code>apm install go-plus</code></li>
+</ul>
+<p><code>language-go</code> permet le support de la coloration syntaxique de Go. Fournit par défaut avec Atom.</p>
+<p><code>go-plus</code> permet d&rsquo;avoir de l&rsquo;auto-complétion, le formateur officiel, du linting et donne un retour visuel des erreurs de syntaxe. Un super plugin !</p>
+<p><code>go-plus</code> nécessite l&rsquo;installation de <a href="https://github.com/nsf/gocode">Gocode</a> pour l&rsquo;autocompletion.</p>
+<p>J&rsquo;ai donc arrêté mon choix sur Atom.</p>
+<h2 id="le-langage">Le langage</h2>
+<p>Maintenant, il faut mettre les mains dans le cambouis !</p>
+<p>Les commentaires sont assez classiques : <code>// mon commentaire</code> et <code>/* mon commentaire */</code></p>
+<p>Après quelques lectures de la documentation et de quelques samples, je comprends que Go est un langage fonctionnel où les fonctions sont simplement exposée par le package.</p>
+<p>J&rsquo;ai décidé de créer un premier fichier <code>fizzbuzz.go</code>.</p>
+<p>A l&rsquo;aide de la documentation j&rsquo;ai obtenu ceci :</p>
+<p><em>fizzbuzz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">kata</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// FizzBuzz main function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">FizzBuzz</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Kata FizzBuzz&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>C&rsquo;est un fichier simple qui affiche <code>Kata FizzBuzz</code> dans la console.</p>
+<p>Je tente :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run fizzbuzz.go
+</span></span></code></pre></div><p>Mais cela ne marche pas :</p>
+<pre tabindex="0"><code>go run: cannot run non-main package
+</code></pre><p>Ok j&rsquo;ai fait n&rsquo;importe quoi en voulant lancer ce fichier.
+Pour que cela marche j&rsquo;aurais du définir le package de mon fichier comme étant <code>main</code> et créer une fonction nommé <code>main</code> :</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// FizzBuzz main function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Kata FizzBuzz&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mais mon premier objectif n&rsquo;était pas de faire tourner une ligne de commande mais des tests afin de pouvoir faire le kata.</p>
+<p>J&rsquo;ai donc gardé le premier contenu du fichier <code>fizzbuzz.go</code> et créé un nouveau fichier <code>fizzbuzz_test.go</code>.</p>
+<p>Pour cela, il me faut déclarer des variables, je regarde les sources en exemples dans le GitHub officiel.</p>
+<p>Je comprends que les variables sont déclarées sous la forme :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#66d9ef">string</span>
+</span></span></code></pre></div><p>Et qu&rsquo;il est possible, lors d&rsquo;une déclaration avec assignation, d&rsquo;utiliser une notation réduite :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">foo</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;bar&#34;</span>
+</span></span></code></pre></div><ul>
+<li>pas besoin de <code>var</code></li>
+<li>pas besoin de définir le type</li>
+</ul>
+<p>J&rsquo;écris donc mon premier test.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">kata</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_Should_TODO</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">FizzBuzz</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">actual</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">actual</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Expected %s but was %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">actual</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>J&rsquo;ai simplement appelé la fonction <code>FizzBuzz</code> dans le test  et lancé le test :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go test
+</span></span></code></pre></div><p>La sortie de console était plutôt positive :</p>
+<ul>
+<li>mon message <code>Kata FizzBuzz</code> s&rsquo;affichait bien</li>
+<li>mon test échouait ce qui était mon objectif.</li>
+</ul>
+<pre tabindex="0"><code>Kata FizzBuzz
+--- FAIL: Test_Should_TODO (0.00s)
+        fizzbuzz_test.go:13: Expected 1 but was 0
+FAIL
+exit status 1
+FAIL    /mysources/kata/fizz-buzz/go        0.084s
+</code></pre><p>J&rsquo;ai une idée très partielle du langage mais c&rsquo;est parti pour le kata.</p>
+<h2 id="le-kata">Le kata</h2>
+<p>Mon objectif est bien sur de faire ce kata en TDD avec des <em>baby steps</em>.</p>
+<h3 id="description-du-kata">Description du kata</h3>
+<blockquote>
+<p>Afficher les chiffres de 1 to 100.</p>
+<p>Pour les multiples de trois afficher <code>Fizz</code>.</p>
+<p>Pour les multiples de cinq afficher <code>Buzz</code>.</p>
+<p>Pour les multiples de trois et de cinq afficher <code>FizzBuzz</code>.</p>
+</blockquote>
+<h3 id="étape-1---afficher-un-chiffre">Étape 1 - Afficher un chiffre</h3>
+<p>Je connais bien ce kata donc je commence par écrire un test simple pour écrire un chiffre dans la console.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">kata</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_string_representation_when_passing_an_integer</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but display %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Voilà le test est écrit mais il est rouge : la fonction <code>Display</code> n&rsquo;existe pas.</p>
+<p>Pour créer cette méthode je dois pouvoir passer un paramètre à une fonction et convertir un <code>int</code> en <code>string</code>.</p>
+<p>Encore un retour à la documentation.</p>
+<p>La déclaration d&rsquo;un paramètre d&rsquo;une fonction se fait en écrivant le nom du paramètre puis son type.
+Il possible de définir le type de retour en ajoutant le type après la déclaration de la méthode.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Foo</span>(<span style="color:#a6e22e">bar</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Le deuxième point est plus compliqué car je ne vois pas comment convertir un <code>int</code> en <code>string</code>.</p>
+<p>Je ne trouve rien rapidement dans la documentation donc Google est mon ami.</p>
+<p>Ce n&rsquo;est pas très intuitif car il faut importer le package <code>strconv</code> et utiliser la méthode <code>strconv.Itoa()</code>.</p>
+<p>Je crée la méthode <code>Display</code> dans <code>fizzbuz.go</code>.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">kata</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// FizzBuzz main function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">FizzBuzz</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Kata FizzBuzz&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je lance les tests (<code>go test</code>) et c&rsquo;est bon mon test est vert, victoire !</p>
+<h3 id="étape-2---multiple-de-3">Étape 2 - Multiple de 3</h3>
+<p>Bon maintenant, je vais devoir ajouter un nouveau test pour afficher <code>Fizz</code> lorsque le chiffre est <code>3</code>.</p>
+<p>Écrire le test est assez simple.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Pour les multiples de trois afficher &#34;Fizz&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_Fizz_when_passing_3</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but display %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je lance les tests (<code>go test</code>) et ce nouveau test est rouge.</p>
+<p>Je crée un code stupide mais qui fait passer le test.</p>
+<p>Pour cela j&rsquo;ai besoin d&rsquo;écrire un <code>if</code>, je l&rsquo;ai déjà fait plus haut mais en copiant du code.</p>
+<p>Je comprends en écrivant cette partie que les parenthèses sont optionnelles. Le formateur de Go les supprime automatiquement.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Les accolades pour les <code>if</code> sont optionnelles, pour l&rsquo;instant je n&rsquo;en met pas (je ne suis pas fan du code inline ou sans accolades, je trouve que cela manque de lisibilité et augmente le risque d&rsquo;erreurs lors des évolutions).</p>
+<p>Je relance les tests (<code>go test</code>) et ce test est vert, encore une victoire !</p>
+<h3 id="étape-3---multiple-de-3">Étape 3 - Multiple de 3</h3>
+<p>Afin de faire une implémentation plus correcte j&rsquo;ajoute un test pour le chiffre <code>6</code>.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Pour les multiples de trois afficher &#34;Fizz&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_Fizz_when_passing_6</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but display %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je lance les tests (<code>go test</code>) et ce nouveau test est rouge.</p>
+<p>Maintenant je fais un refactor de l&rsquo;implémentation afin de traiter ce nouveau cas.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je relance les tests (<code>go test</code>) et tous les tests sont verts, encore une victoire !</p>
+<h3 id="étape-4---multiple-de-5">Étape 4 - Multiple de 5</h3>
+<p>J&rsquo;ajoute un nouveau test pour afficher <code>Buzz</code> lorsque le chiffre est <code>5</code>.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Pour les multiples de cinq afficher &#34;Buzz&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_Buzz_when_passing_5</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but display %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je lance les tests (<code>go test</code>) et ce nouveau test est rouge.</p>
+<p>Suivi de l&rsquo;implémentation très simpliste :</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je relance les tests (<code>go test</code>) et tous les tests sont verts, encore une victoire !</p>
+<h3 id="étape-5---multiple-de-5">Étape 5 - Multiple de 5</h3>
+<p>Même travail que pour les étapes 3 et 4.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Pour les multiples de cinq afficher &#34;Buzz&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_Buzz_when_passing_20</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but display %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je lance les tests (<code>go test</code>) et ce nouveau test est rouge.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Je relance les tests (<code>go test</code>) et tous les tests sont verts, encore une victoire !</p>
+<h3 id="étape-6---multiple-de-3-et-5">Étape 6 - Multiple de 3 et 5</h3>
+<p>Ajout d&rsquo;un nouveau test pour les multiples de trois et de cinq qui doivent se transformer en &ldquo;FizzBuzz&rdquo;.</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Pour les multiples de trois et de cinq afficher &#34;FizzBuzz&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_FizzBuzz_when_passing_15</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">15</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but return is %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Première phase : aller au vert le plus rapidement.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Les tests sont verts mais il y a beaucoup de duplication dans le code donc je dois factoriser le code en créant une méthode <code>IsMultipleOf</code>.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// IsMultipleOf divisor for number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#a6e22e">divisor</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">number</span><span style="color:#f92672">%</span><span style="color:#a6e22e">divisor</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ce qui me permet d&rsquo;écrire la méthode <code>Display</code> ainsi :</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">number</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Les tests sont verts mais je ne suis pas très fan de la répétition donc :</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Display number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fizz</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">buzz</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">IsMultipleOf</span>(<span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fizz</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">buzz</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fizz</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">buzz</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">number</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Les tests sont verts, avant de passer à l&rsquo;étape suivante j&rsquo;ajoute un test pour vérifier que la règle fonctionne bien :</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Pour les multiples de trois et de cinq afficher &#34;FizzBuzz&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_print_FizzBuzz_when_passing_30</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but return is %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Les tests sont verts, c&rsquo;est parti pour la dernière étape.</p>
+<h3 id="etape-7---de-1-à-100">Etape 7 - de 1 à 100</h3>
+<p>Il ne me reste plus qu&rsquo;à traiter une séquence de 1 à 100.</p>
+<p>Pour cela j&rsquo;ajoute un test :</p>
+<p><em>fizzbuz_test.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Afficher les chiffres de 1 to 100.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Test_should_display_a_valid_result_when_diplay_numbers_between_1_and_100</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rt</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">FizzBuzz</span>(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\nFizz\n19\nBuzz\nFizz\n22\n23\nFizz\nBuzz\n26\nFizz\n28\n29\nFizzBuzz\n31\n32\nFizz\n34\nBuzz\nFizz\n37\n38\nFizz\nBuzz\n41\nFizz\n43\n44\nFizzBuzz\n46\n47\nFizz\n49\nBuzz\nFizz\n52\n53\nFizz\nBuzz\n56\nFizz\n58\n59\nFizzBuzz\n61\n62\nFizz\n64\nBuzz\nFizz\n67\n68\nFizz\nBuzz\n71\nFizz\n73\n74\nFizzBuzz\n76\n77\nFizz\n79\nBuzz\nFizz\n82\n83\nFizz\nBuzz\n86\nFizz\n88\n89\nFizzBuzz\n91\n92\nFizz\n94\nBuzz\nFizz\n97\n98\nFizz\n&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">rt</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Must display %s but return is %s&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">rt</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Le test est rouge, le code ne compile pas, il faut que je modifie la méthode <code>FizzBuzz</code>.</p>
+<p>J&rsquo;ai besoin de faire un <code>for</code>, je regarde la documentation, c&rsquo;est comme en Java et je ne vois pas de générateur de &lsquo;range&rsquo;.</p>
+<p><em>fizzbuz.go</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// FizzBuzz main function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">FizzBuzz</span>(<span style="color:#a6e22e">max</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Kata FizzBuzz&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">max</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">result</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">Display</span>(<span style="color:#a6e22e">i</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tout les tests sont verts, c&rsquo;est la victoire ultime !</p>
+<h2 id="et-après-">Et après ?</h2>
+<p>J&rsquo;ai fini le kata, cela m&rsquo;a pris 3h, j&rsquo;ai appris beaucoup de choses sur le langage, surtout sur la philosophie derrière le langage.</p>
+<p>Pour aller plus loin, je vais devoir faire un kata plus complexe ou débuter une application (qui sera une forme de kata).</p>
+<p>L&rsquo;exploration des bibliothèques va aussi être un point important :</p>
+<ul>
+<li>explorer les bibliothèques externes de tests comme <a href="http://goconvey.co">GoConvey</a> ou <a href="https://labix.org/gocheck">GoCheck</a> ou <a href="https://github.com/stretchr/testify">Testify</a> ou <a href="https://github.com/axw/gocov">GoCov</a></li>
+<li>avoir une meilleure vision d&rsquo;ensemble des bibliothèques internes de Go</li>
+<li>trouver les bonnes bibliothèques externes pour les cas commun</li>
+</ul>
+<p>Je vais aussi regarder des applications existantes, des articles, et des présentations, etc. afin d&rsquo;approfondir ma compréhension.</p>
+<p>Je vais sûrement faire <em>un tour de Go</em> : <a href="https://tour.golang.org/welcome/">https://tour.golang.org/welcome/</a></p>
+<p>Vous trouverez le code de résultant de cette article ici : <a href="https://github.com/ldez/tdl-go">https://github.com/ldez/tdl-go</a></p>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/">Javascript - Héritage &amp; assign/extend</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (22)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (19)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://bento.me/ldez" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2025
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.c6929f2feac193f449f3383cf9db9decec05d4535c004b855bfae822f292ab63.js" integrity="sha256-xpKfL&#43;rBk/RJ8zg8&#43;dud7OwF1FNcAEuFW/roIvKSq2M=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>

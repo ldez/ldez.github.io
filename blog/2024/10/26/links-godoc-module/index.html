@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="ldez">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.136.5">
+    <title>
+        
+           
+               How I published links inside the pkg.go.dev documentation of my module &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="How I published links inside the pkg.go.dev documentation of my module">
+    <meta itemprop="description" content="How I published links inside the pkg.go.dev documentation of my module - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="How I published links inside the pkg.go.dev documentation of my module">
+  <meta property="og:description" content="While hunting down a package on https://pkg.go.dev, I stumbled upon a delightful surprise in the “Links” section: there are custom links!!
+What is this magic?">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2024-10-26T01:18:13+01:00">
+    <meta property="article:modified_time" content="2025-03-23T02:32:52+01:00">
+    <meta property="article:tag" content="Godoc">
+    <meta property="article:tag" content="Emoji">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Golang">
+    <meta property="article:tag" content="Doc">
+    <meta property="article:tag" content="Documentation">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.37df0d8c4e01d48af9ecde04ff7ca4e01fc9d2456378c25b5b5560c552581f0c.css" integrity="sha256-N98NjE4B1Ir57N4E/3yk4B/J0kVjeMJbW1VgxVJYHww=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="ldez">
+    <meta name="twitter:title" content="How I published links inside the pkg.go.dev documentation of my module">
+    <meta name="twitter:image" content="https://ldez.github.io/images/pkggodevlinks-package.png">
+    <meta name="twitter:image:alt" content="List of items inside the go doc with emojis">
+    <meta name="twitter:creator" content="ldez">
+
+
+    <meta name="og:image" content="https://ldez.github.io/images/pkggodevlinks-package.png">
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">
+            How I published links inside the pkg.go.dev documentation of my module
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2024-10-26</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/golang/">GoLang</a>
+                    
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/documentation/">Documentation</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>While hunting down a package on <a href="https://pkg.go.dev">https://pkg.go.dev</a>, I stumbled upon a delightful surprise in the &ldquo;Links&rdquo; section: there are custom links!!</p>
+<p>
+<a href="/images/pkggodevlinks-package.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/pkggodevlinks-package.png"/>
+</a>
+</p>
+<p>What is this magic?</p>
+<p>Let&rsquo;s go to find if there is a documentation about that!</p>
+<p>After some digging, I landed on the <a href="https://pkg.go.dev/about">About</a> page and discovered a section called <a href="https://pkg.go.dev/about#adding-links">Adding links</a>.</p>
+<p>But this section is a bit sparse about the topic: it&rsquo;s just a reference to the issue <a href="https://github.com/golang/go/issues/42968">42968</a>.</p>
+<p>As an open source maintainer, I know that issues are not really the best documentation, the initial concept often morphs as ideas evolve.</p>
+<p>I dove into the code itself and found even more than what the issue hinted at.</p>
+<h2 id="-how">❓ How?</h2>
+<p>Note: The repository must have a license that follow the <a href="https://pkg.go.dev/license-policy">license policy</a>.</p>
+<h3 id="readmemd-syntax">readme.md syntax</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#75715e">## Links
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">Title from readme 1</span>](<span style="color:#a6e22e">https://example.com</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">Title from readme 2</span>](<span style="color:#a6e22e">https://example.org</span>)
+</span></span></code></pre></div><p>The heading level is not important, it can be <code>#</code>, <code>##</code>, <code>###</code>, etc.</p>
+<h3 id="godoc-syntax">godoc syntax</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Package foo Paneer fromage babybel.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Ricotta paneer monterey jack parmesan cheesecake who moved my cheese bavarian bergkase cheeseburger. 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Links
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// - Title from godoc 1, https://example.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// - Title from godoc 2, https://example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">foo</span>
+</span></span></code></pre></div><h2 id="-where">🪧 Where?</h2>
+<p>There are several ways to add links:</p>
+<ul>
+<li>the <code>readme.md</code> file
+<ul>
+<li>at the &ldquo;root/module&rdquo; level</li>
+<li>inside any package level</li>
+</ul>
+</li>
+<li>the package godoc
+<ul>
+<li>at the &ldquo;root/module&rdquo; level</li>
+<li>inside any package level</li>
+</ul>
+</li>
+</ul>
+<h2 id="hierarchy-of-the-links">Hierarchy of the Links</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>. (links from readme.md and godoc)
+</span></span><span style="display:flex;"><span>├── pkga (links from &#34;root/module&#34; readme.md)
+</span></span><span style="display:flex;"><span>├── pkgb (links from &#34;root/module&#34; readme.md + package readme.md)
+</span></span><span style="display:flex;"><span>├── pkgd (links from &#34;root/module&#34; readme.md + package godoc)
+</span></span><span style="display:flex;"><span>└── pkgc (links from &#34;root/module&#34; readme.md + package godoc + package readme.md)
+</span></span></code></pre></div><p>At the &ldquo;root/module&rdquo; level, the links from <code>readme.md</code> and/or godoc will be displayed.</p>
+<p>At the package level (not the &ldquo;root/module&rdquo; level):</p>
+<ul>
+<li>if you have links inside the <code>readme.md</code> of this package:
+<ul>
+<li>the links from the package <code>readme.md</code> (and from the &ldquo;root/module&rdquo; <code>readme.md</code>) will be displayed</li>
+</ul>
+</li>
+<li>if you have link inside the godoc of this package:
+<ul>
+<li>the links from the godoc (and from the &ldquo;root/module&rdquo; <code>readme.md</code>) the package will be displayed</li>
+</ul>
+</li>
+<li>if you have no package <code>readme.md</code> and no package godoc:
+<ul>
+<li>the links from the &ldquo;root/module&rdquo; <code>readme.md</code> will be displayed</li>
+</ul>
+</li>
+</ul>
+<p>The links from godoc are not transitives: the links from the parent package are not displayed.</p>
+<p>The links from <code>readme.md</code> are partially transitives: only the &ldquo;root/module&rdquo; <code>readme.md</code> will be used.</p>
+<h2 id="-results">✨ Results</h2>
+<h3 id="rootmodule">Root/Module</h3>
+<p>Links from <code>readme.md</code> and godoc:</p>
+<p><a href="https://pkg.go.dev/github.com/ldez/pkggodevlinks@v0.1.0">module page</a></p>
+<p>
+<a href="/images/pkggodevlinks-package.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/pkggodevlinks-package.png"/>
+</a>
+</p>
+<h3 id="package-bar">Package bar</h3>
+<p>Links from &ldquo;root/module&rdquo; <code>readme.md</code> + package <code>readme.md</code>:</p>
+<p><a href="https://pkg.go.dev/github.com/ldez/pkggodevlinks@v0.1.0/bar">bar package page</a></p>
+<p>
+<a href="/images/pkggodevlinks-bar-package.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/pkggodevlinks-bar-package.png"/>
+</a>
+</p>
+<h3 id="package-fii">Package fii</h3>
+<p>Links from &ldquo;root/module&rdquo; <code>readme.md</code>:</p>
+<p><a href="https://pkg.go.dev/github.com/ldez/pkggodevlinks@v0.1.0/fii">fii package page</a></p>
+<p>
+<a href="/images/pkggodevlinks-fii-package.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/pkggodevlinks-fii-package.png"/>
+</a>
+</p>
+<h3 id="package-foo">Package foo</h3>
+<p>links from &ldquo;root/module&rdquo; <code>readme.md</code> + package godoc:</p>
+<p><a href="https://pkg.go.dev/github.com/ldez/pkggodevlinks@v0.1.0/foo">foo package page</a></p>
+<p>
+<a href="/images/pkggodevlinks-foo-package.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/pkggodevlinks-foo-package.png"/>
+</a>
+</p>
+<h3 id="package-bir">Package bir</h3>
+<p>Links from &ldquo;root/module&rdquo; <code>readme.md</code> + package godoc + package <code>readme.md</code>:</p>
+<p><a href="https://pkg.go.dev/github.com/ldez/pkggodevlinks@v0.1.0/bir">bir package page</a></p>
+<p>
+<a href="/images/pkggodevlinks-bir-package.png" data-dimbox data-dimbox-caption="">
+  <img src="/images/pkggodevlinks-bir-package.png"/>
+</a>
+</p>
+<h2 id="why">Why?</h2>
+<p>This can be useful if you want to add link to your documentation, your issue tracker, or more.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#75715e">## Links
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">❤️</span>](<span style="color:#a6e22e">https://github.com/sponsors/ldez</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">📑 Documentation</span>](<span style="color:#a6e22e">https://go-acme.github.io/lego/</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">🐞 Issues</span>](<span style="color:#a6e22e">https://github.com/go-acme/lego/issues</span>)
+</span></span></code></pre></div><h2 id="if-you-enjoyed-this-article">If you enjoyed this article</h2>
+<p>Please <a href="https://github.com/sponsors/ldez">give me a tip</a> ❤️.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/godoc/">Godoc</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/emoji/">Emoji</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/go/">Go</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/golang/">Golang</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/doc/">Doc</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/documentation/">Documentation</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/">Javascript - Héritage &amp; assign/extend</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (22)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (19)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (3)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://bento.me/ldez" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2025
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.c6929f2feac193f449f3383cf9db9decec05d4535c004b855bfae822f292ab63.js" integrity="sha256-xpKfL&#43;rBk/RJ8zg8&#43;dud7OwF1FNcAEuFW/roIvKSq2M=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>

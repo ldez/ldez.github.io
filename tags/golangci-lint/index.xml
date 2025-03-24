@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golangci-Lint on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/golangci-lint/</link>
+    <description>Recent content in Golangci-Lint on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2025 15:58:12 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/golangci-lint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to golangci-lint v2</title>
+      <link>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</guid>
+      <description>&lt;p&gt;I am thrilled to announce the release of v2!&lt;/p&gt;&#xA;&lt;p&gt;I hope is that these features will enhance your development experience.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;&#xA;  &lt;img src=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linter on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/linter/</link>
+    <description>Recent content in Linter on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2025 15:58:12 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/linter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to golangci-lint v2</title>
+      <link>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</guid>
+      <description>&lt;p&gt;I am thrilled to announce the release of v2!&lt;/p&gt;&#xA;&lt;p&gt;I hope is that these features will enhance your development experience.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;&#xA;  &lt;img src=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>exptostd</title>
+      <link>https://ldez.github.io/blog/2024/12/22/exptostd/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/12/22/exptostd/</guid>
+      <description>&lt;p&gt;Detects functions from golang.org/x/exp/ that can be replaced by std functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Usetesting</title>
+      <link>https://ldez.github.io/blog/2024/11/24/usetesting/</link>
+      <pubDate>Sun, 24 Nov 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/11/24/usetesting/</guid>
+      <description>&lt;p&gt;Detects when some calls can be replaced by methods from the testing package.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tagliatelle</title>
+      <link>https://ldez.github.io/blog/2021/04/11/tagliatelle/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/04/11/tagliatelle/</guid>
+      <description>&lt;p&gt;A linter that handles Go struct tags.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Libraries Comparison About Word Cases</title>
+      <link>https://ldez.github.io/blog/2021/04/11/libraries-comparison-about-word-cases/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:12 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/04/11/libraries-comparison-about-word-cases/</guid>
+      <description>&lt;p&gt;Comparison of Word Cases Manipulations Libraries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GoModDirectives</title>
+      <link>https://ldez.github.io/blog/2021/03/04/gomoddirectives/</link>
+      <pubDate>Thu, 04 Mar 2021 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/03/04/gomoddirectives/</guid>
+      <description>&lt;p&gt;A linter that handle &lt;code&gt;replace&lt;/code&gt;, &lt;code&gt;retract&lt;/code&gt;, &lt;code&gt;exclude&lt;/code&gt; directives into &lt;code&gt;go.mod&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

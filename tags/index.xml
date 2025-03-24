@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/</link>
+    <description>Recent content in Tags on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2025 15:58:12 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://ldez.github.io/tags/go/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>https://ldez.github.io/tags/golang/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golangci</title>
+      <link>https://ldez.github.io/tags/golangci/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/golangci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golangci-Lint</title>
+      <link>https://ldez.github.io/tags/golangci-lint/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/golangci-lint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linter</title>
+      <link>https://ldez.github.io/tags/linter/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/linter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linting</title>
+      <link>https://ldez.github.io/tags/linting/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/linting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://ldez.github.io/tags/test/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tool</title>
+      <link>https://ldez.github.io/tags/tool/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/tool/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Doc</title>
+      <link>https://ldez.github.io/tags/doc/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/doc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://ldez.github.io/tags/documentation/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/documentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Emoji</title>
+      <link>https://ldez.github.io/tags/emoji/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/emoji/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Godoc</title>
+      <link>https://ldez.github.io/tags/godoc/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/godoc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fork</title>
+      <link>https://ldez.github.io/tags/fork/</link>
+      <pubDate>Sun, 07 Jul 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/fork/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github</title>
+      <link>https://ldez.github.io/tags/github/</link>
+      <pubDate>Sun, 07 Jul 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moderation</title>
+      <link>https://ldez.github.io/tags/moderation/</link>
+      <pubDate>Sun, 12 May 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/moderation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dependencies</title>
+      <link>https://ldez.github.io/tags/dependencies/</link>
+      <pubDate>Wed, 14 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/dependencies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go-Modules</title>
+      <link>https://ldez.github.io/tags/go-modules/</link>
+      <pubDate>Wed, 14 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/go-modules/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dns</title>
+      <link>https://ldez.github.io/tags/dns/</link>
+      <pubDate>Sun, 11 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/dns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lib</title>
+      <link>https://ldez.github.io/tags/lib/</link>
+      <pubDate>Sun, 11 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/lib/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mock</title>
+      <link>https://ldez.github.io/tags/mock/</link>
+      <pubDate>Tue, 10 Jan 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/mock/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testify</title>
+      <link>https://ldez.github.io/tags/testify/</link>
+      <pubDate>Tue, 10 Jan 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/testify/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Acme</title>
+      <link>https://ldez.github.io/tags/acme/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/acme/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certificates</title>
+      <link>https://ldez.github.io/tags/certificates/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/certificates/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dumper</title>
+      <link>https://ldez.github.io/tags/dumper/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/dumper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kv</title>
+      <link>https://ldez.github.io/tags/kv/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/kv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Traefik</title>
+      <link>https://ldez.github.io/tags/traefik/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/traefik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mime-Types</title>
+      <link>https://ldez.github.io/tags/mime-types/</link>
+      <pubDate>Sat, 01 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/mime-types/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Struct-Tag</title>
+      <link>https://ldez.github.io/tags/struct-tag/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/struct-tag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Word-Case</title>
+      <link>https://ldez.github.io/tags/word-case/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:12 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/word-case/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cli</title>
+      <link>https://ldez.github.io/tags/cli/</link>
+      <pubDate>Tue, 25 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Flags</title>
+      <link>https://ldez.github.io/tags/flags/</link>
+      <pubDate>Tue, 25 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/flags/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ci</title>
+      <link>https://ldez.github.io/tags/ci/</link>
+      <pubDate>Fri, 14 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Semaphoreci</title>
+      <link>https://ldez.github.io/tags/semaphoreci/</link>
+      <pubDate>Fri, 14 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/semaphoreci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://ldez.github.io/tags/docker/</link>
+      <pubDate>Mon, 29 Apr 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker-Hub</title>
+      <link>https://ldez.github.io/tags/docker-hub/</link>
+      <pubDate>Mon, 29 Apr 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/docker-hub/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multi-Arch</title>
+      <link>https://ldez.github.io/tags/multi-arch/</link>
+      <pubDate>Mon, 29 Apr 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/multi-arch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github-Action</title>
+      <link>https://ldez.github.io/tags/github-action/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/github-action/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Issue</title>
+      <link>https://ldez.github.io/tags/issue/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/issue/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pull-Request</title>
+      <link>https://ldez.github.io/tags/pull-request/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/pull-request/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Module</title>
+      <link>https://ldez.github.io/tags/module/</link>
+      <pubDate>Sun, 13 Jan 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/module/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vgo</title>
+      <link>https://ldez.github.io/tags/vgo/</link>
+      <pubDate>Sun, 13 Jan 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/vgo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fun</title>
+      <link>https://ldez.github.io/tags/fun/</link>
+      <pubDate>Sun, 30 Dec 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/fun/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://ldez.github.io/tags/git/</link>
+      <pubDate>Sun, 30 Dec 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gti</title>
+      <link>https://ldez.github.io/tags/gti/</link>
+      <pubDate>Sun, 30 Dec 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/gti/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js</title>
+      <link>https://ldez.github.io/tags/js/</link>
+      <pubDate>Sat, 17 Mar 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Random</title>
+      <link>https://ldez.github.io/tags/random/</link>
+      <pubDate>Sat, 17 Mar 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/random/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://ldez.github.io/tags/tools/</link>
+      <pubDate>Sat, 17 Mar 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mkdocs</title>
+      <link>https://ldez.github.io/tags/mkdocs/</link>
+      <pubDate>Sun, 14 Jan 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/mkdocs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bot</title>
+      <link>https://ldez.github.io/tags/bot/</link>
+      <pubDate>Sun, 10 Sep 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/bot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sync</title>
+      <link>https://ldez.github.io/tags/sync/</link>
+      <pubDate>Sun, 10 Sep 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/sync/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webhook</title>
+      <link>https://ldez.github.io/tags/webhook/</link>
+      <pubDate>Sun, 06 Aug 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/webhook/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Merge</title>
+      <link>https://ldez.github.io/tags/merge/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/merge/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Changelog</title>
+      <link>https://ldez.github.io/tags/changelog/</link>
+      <pubDate>Sun, 11 Jun 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/changelog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wrapper</title>
+      <link>https://ldez.github.io/tags/wrapper/</link>
+      <pubDate>Sun, 04 Jun 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/tags/wrapper/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

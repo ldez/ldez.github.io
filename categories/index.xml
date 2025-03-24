@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/categories/</link>
+    <description>Recent content in Categories on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2025 15:58:12 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GoLang</title>
+      <link>https://ldez.github.io/categories/golang/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tool</title>
+      <link>https://ldez.github.io/categories/tool/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/tool/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://ldez.github.io/categories/documentation/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/documentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lib</title>
+      <link>https://ldez.github.io/categories/lib/</link>
+      <pubDate>Sun, 07 Jul 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/lib/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://ldez.github.io/categories/tools/</link>
+      <pubDate>Sat, 17 Mar 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TDL</title>
+      <link>https://ldez.github.io/categories/tdl/</link>
+      <pubDate>Fri, 04 Dec 2015 22:13:46 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/tdl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://ldez.github.io/categories/test/</link>
+      <pubDate>Fri, 04 Dec 2015 22:13:46 +0100</pubDate>
+      <guid>https://ldez.github.io/categories/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://ldez.github.io/categories/java/</link>
+      <pubDate>Sat, 22 Aug 2015 22:22:38 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kata</title>
+      <link>https://ldez.github.io/categories/kata/</link>
+      <pubDate>Sat, 22 Aug 2015 22:22:38 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/kata/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tdd</title>
+      <link>https://ldez.github.io/categories/tdd/</link>
+      <pubDate>Sat, 22 Aug 2015 22:22:38 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/tdd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Javascript</title>
+      <link>https://ldez.github.io/categories/javascript/</link>
+      <pubDate>Thu, 21 May 2015 21:43:19 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promesse</title>
+      <link>https://ldez.github.io/categories/promesse/</link>
+      <pubDate>Thu, 21 May 2015 21:43:19 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/promesse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promise</title>
+      <link>https://ldez.github.io/categories/promise/</link>
+      <pubDate>Thu, 21 May 2015 21:43:19 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/promise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Héritage</title>
+      <link>https://ldez.github.io/categories/h%C3%A9ritage/</link>
+      <pubDate>Wed, 22 Apr 2015 02:14:44 +0200</pubDate>
+      <guid>https://ldez.github.io/categories/h%C3%A9ritage/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

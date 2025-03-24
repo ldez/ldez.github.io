@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codes on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/code/</link>
+    <description>Recent content in Codes on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2025 15:58:12 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to golangci-lint v2</title>
+      <link>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</link>
+      <pubDate>Sun, 23 Mar 2025 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/</guid>
+      <description>&lt;p&gt;I am thrilled to announce the release of v2!&lt;/p&gt;&#xA;&lt;p&gt;I hope is that these features will enhance your development experience.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;&#xA;  &lt;img src=&#34;https://ldez.github.io/images/amazing-world-golangci-lint-v2.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I published links inside the pkg.go.dev documentation of my module</title>
+      <link>https://ldez.github.io/blog/2024/10/26/links-godoc-module/</link>
+      <pubDate>Sat, 26 Oct 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/10/26/links-godoc-module/</guid>
+      <description>&lt;p&gt;While hunting down a package on &lt;a href=&#34;https://pkg.go.dev&#34;&gt;https://pkg.go.dev&lt;/a&gt;, I stumbled upon a delightful surprise in the &amp;ldquo;Links&amp;rdquo; section: there are custom links!!&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/pkggodevlinks-package.png&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;&#xA;  &lt;img src=&#34;https://ldez.github.io/images/pkggodevlinks-package.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;What is this magic?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Take a Mocktail</title>
+      <link>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</link>
+      <pubDate>Tue, 10 Jan 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34; data-dimbox data-dimbox-caption=&#34;Mocktail&#34;&gt;&#xA;  &lt;img alt=&#34;Mocktail&#34; src=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Mocktail: Mock Generator for Strongly-Typed Mocks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test Driven Learning - Go</title>
+      <link>https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/</link>
+      <pubDate>Fri, 04 Dec 2015 22:13:46 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/</guid>
+      <description>&lt;p&gt;Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt;, j&amp;rsquo;ai donc eut l&amp;rsquo;envie de m&amp;rsquo;initier à ce langage.&lt;/p&gt;&#xA;&lt;p&gt;Je me suis demandé comment commencer : faire des tutoriaux, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.&lt;/p&gt;&#xA;&lt;p&gt;Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.&lt;/p&gt;&#xA;&lt;p&gt;C&amp;rsquo;est un kata très simple que je connais bien, je l&amp;rsquo;ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?&lt;/p&gt;&#xA;&lt;p&gt;C&amp;rsquo;est parti !&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kata Print Diamond</title>
+      <link>https://ldez.github.io/blog/2015/08/22/kata-print-diamond/</link>
+      <pubDate>Sat, 22 Aug 2015 22:22:38 +0200</pubDate>
+      <guid>https://ldez.github.io/blog/2015/08/22/kata-print-diamond/</guid>
+      <description>&lt;p&gt;Ce kata définit par &lt;a href=&#34;http://claysnow.co.uk/recycling-tests-in-tdd/&#34;&gt;Seb Rose&lt;/a&gt; a pour but de montrer une approche visant à recycler les tests afin de ne pas créer de phase tunnel de refactor long et massif.&lt;/p&gt;&#xA;&lt;p&gt;J&amp;rsquo;ai donc respecté l&amp;rsquo;approche TDD pour l&amp;rsquo;émergence du design et fait des &amp;lsquo;&lt;em&gt;baby step&lt;/em&gt;&amp;rsquo; en créant des tests pour chacune des étapes afin d&amp;rsquo;avoir une &lt;em&gt;victoire&lt;/em&gt; à chaque fois. (Il est très important d&amp;rsquo;avoir rapidement un retour positif pour ce que l&amp;rsquo;on fait)&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;Étant donné une lettre, imprimer un diamant en commençant par &amp;ldquo;A&amp;rdquo; avec la lettre fournie pour point le plus large.&lt;/p&gt;&#xA;&lt;p&gt;Par exemple &lt;code&gt;print-diamond ‘C’&lt;/code&gt; affiche :&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  A&#xA; B B&#xA;C   C&#xA; B B&#xA;  A&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Promesse de promesse, promis ?</title>
+      <link>https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/</link>
+      <pubDate>Thu, 21 May 2015 21:43:19 +0200</pubDate>
+      <guid>https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/</guid>
+      <description>&lt;p&gt;Lors d&amp;rsquo;une conversation avec un collègue de travail (&lt;a href=&#34;http://gillespie59.github.io&#34;&gt;Emmanuel Demey&lt;/a&gt;), une question est venue :&lt;/p&gt;&#xA;&lt;p&gt;Si une promesse prend comme argument de son &lt;code&gt;resolve&lt;/code&gt; une promesse, que se passe t&amp;rsquo;il dans le &lt;code&gt;then&lt;/code&gt; de la méthode appelante ?&lt;/p&gt;&#xA;&lt;p&gt;Le resultat est une promesse ou une &lt;code&gt;String&lt;/code&gt; ?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Javascript - Héritage &amp; assign/extend</title>
+      <link>https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/</link>
+      <pubDate>Wed, 22 Apr 2015 02:14:44 +0200</pubDate>
+      <guid>https://ldez.github.io/blog/2015/04/22/javascript-inheritence-assign-extend/</guid>
+      <description>&lt;p&gt;Une petite reflexion autour de l&amp;rsquo;héritage en Javascript ES5.&lt;/p&gt;&#xA;&lt;h2 id=&#34;assignextend&#34;&gt;Assign/Extend&lt;/h2&gt;&#xA;&lt;h3 id=&#34;example-1-1&#34;&gt;Example 1-1&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// one&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(){ &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;; } };&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// two&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;two&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Object.&lt;span style=&#34;color:#a6e22e&#34;&gt;assign&lt;/span&gt;({}, &lt;span style=&#34;color:#a6e22e&#34;&gt;one&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;two&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;two&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

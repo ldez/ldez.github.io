@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/tool/</link>
+    <description>Recent content in Tool on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2025 03:23:57 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>exptostd</title>
+      <link>https://ldez.github.io/blog/2024/12/22/exptostd/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/12/22/exptostd/</guid>
+      <description>&lt;p&gt;Detects functions from golang.org/x/exp/ that can be replaced by std functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Usetesting</title>
+      <link>https://ldez.github.io/blog/2024/11/24/usetesting/</link>
+      <pubDate>Sun, 24 Nov 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/11/24/usetesting/</guid>
+      <description>&lt;p&gt;Detects when some calls can be replaced by methods from the testing package.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Distributarepo</title>
+      <link>https://ldez.github.io/blog/2024/07/07/distributarepo/</link>
+      <pubDate>Sun, 07 Jul 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/07/07/distributarepo/</guid>
+      <description>&lt;p&gt;Helper to get an overview of the forks of a GitHub repository.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GHBan</title>
+      <link>https://ldez.github.io/blog/2024/05/12/ghban/</link>
+      <pubDate>Sun, 12 May 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/05/12/ghban/</guid>
+      <description>&lt;p&gt;To block multiple accounts across multiple organizations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Modupwiz</title>
+      <link>https://ldez.github.io/blog/2024/02/14/modupwiz/</link>
+      <pubDate>Wed, 14 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/02/14/modupwiz/</guid>
+      <description>&lt;p&gt;Modules Update Wizard (modupwiz) is a helper to manage dependency updates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Take a Mocktail</title>
+      <link>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</link>
+      <pubDate>Tue, 10 Jan 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2023/01/10/take-a-mocktail/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34; data-dimbox data-dimbox-caption=&#34;Mocktail&#34;&gt;&#xA;  &lt;img alt=&#34;Mocktail&#34; src=&#34;https://ldez.github.io/images/mocktail-social-github.png&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Mocktail: Mock Generator for Strongly-Typed Mocks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mocktail, fruity mocks</title>
+      <link>https://ldez.github.io/blog/2022/06/04/mocktail-fruity-mocks/</link>
+      <pubDate>Sat, 04 Jun 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2022/06/04/mocktail-fruity-mocks/</guid>
+      <description>&lt;p&gt;Naive code generator that creates mock implementation using testify.mock.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>traefik-certs-cleaner</title>
+      <link>https://ldez.github.io/blog/2022/01/23/traefik-certs-cleaner/</link>
+      <pubDate>Sun, 23 Jan 2022 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2022/01/23/traefik-certs-cleaner/</guid>
+      <description>&lt;p&gt;A simple helper to clean the Traefik &lt;code&gt;acme.json&lt;/code&gt; file by removing and revoking certificates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tagliatelle</title>
+      <link>https://ldez.github.io/blog/2021/04/11/tagliatelle/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/04/11/tagliatelle/</guid>
+      <description>&lt;p&gt;A linter that handles Go struct tags.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Libraries Comparison About Word Cases</title>
+      <link>https://ldez.github.io/blog/2021/04/11/libraries-comparison-about-word-cases/</link>
+      <pubDate>Sun, 11 Apr 2021 01:01:12 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/04/11/libraries-comparison-about-word-cases/</guid>
+      <description>&lt;p&gt;Comparison of Word Cases Manipulations Libraries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GoModDirectives</title>
+      <link>https://ldez.github.io/blog/2021/03/04/gomoddirectives/</link>
+      <pubDate>Thu, 04 Mar 2021 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/03/04/gomoddirectives/</guid>
+      <description>&lt;p&gt;A linter that handle &lt;code&gt;replace&lt;/code&gt;, &lt;code&gt;retract&lt;/code&gt;, &lt;code&gt;exclude&lt;/code&gt; directives into &lt;code&gt;go.mod&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SemGo</title>
+      <link>https://ldez.github.io/blog/2020/08/14/semgo/</link>
+      <pubDate>Fri, 14 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/08/14/semgo/</guid>
+      <description>&lt;p&gt;Keeps Go version in SemaphoreCI up to date.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lasius Mixtus 🐜</title>
+      <link>https://ldez.github.io/blog/2020/08/05/lasius-mixtus/</link>
+      <pubDate>Wed, 05 Aug 2020 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/08/05/lasius-mixtus/</guid>
+      <description>&lt;p&gt;Publish Documentation on a GitHub Repository.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deptomod</title>
+      <link>https://ldez.github.io/blog/2019/10/09/deptomod/</link>
+      <pubDate>Wed, 09 Oct 2019 01:01:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/10/09/deptomod/</guid>
+      <description>&lt;p&gt;Enhanced migration from dep to go modules.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Seihon</title>
+      <link>https://ldez.github.io/blog/2019/04/29/seihon/</link>
+      <pubDate>Mon, 29 Apr 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/04/29/seihon/</guid>
+      <description>&lt;p&gt;A simple tool to publish multi-arch images on the Docker Hub.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mjolnir</title>
+      <link>https://ldez.github.io/blog/2019/02/17/mjolnir/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/mjolnir/</guid>
+      <description>&lt;p&gt;A GitHub Action to close issues related to a merged pull request.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>traefik-certs-dumper</title>
+      <link>https://ldez.github.io/blog/2019/02/10/traefik-certs-dumper/</link>
+      <pubDate>Sun, 10 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/10/traefik-certs-dumper/</guid>
+      <description>&lt;p&gt;Dump ACME data from Traefik to certificates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>motoko</title>
+      <link>https://ldez.github.io/blog/2019/01/13/motoko/</link>
+      <pubDate>Sun, 13 Jan 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/01/13/motoko/</guid>
+      <description>&lt;p&gt;A tool, based on Go modules, to update a dependency to a major version.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GTI</title>
+      <link>https://ldez.github.io/blog/2018/12/30/gti/</link>
+      <pubDate>Sun, 30 Dec 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2018/12/30/gti/</guid>
+      <description>&lt;p&gt;A port of gti in Go. (because it&amp;rsquo;s fun)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Messor Structor 🐜</title>
+      <link>https://ldez.github.io/blog/2018/01/14/messor-structor/</link>
+      <pubDate>Sun, 14 Jan 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2018/01/14/messor-structor/</guid>
+      <description>&lt;p&gt;Manage multiple documentation versions with Mkdocs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Gallienii 🐜</title>
+      <link>https://ldez.github.io/blog/2017/09/10/myrmica-gallienii/</link>
+      <pubDate>Sun, 10 Sep 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/09/10/myrmica-gallienii/</guid>
+      <description>&lt;p&gt;Keep Forks Synchronized.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Aloba 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</link>
+      <pubDate>Sun, 30 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</guid>
+      <description>&lt;p&gt;Add labels and milestone on pull requests and issues.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Bibikoffi 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</guid>
+      <description>&lt;p&gt;Closes stale issues.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Lobicornis 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</guid>
+      <description>&lt;p&gt;Update and Merge Pull Request.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PRM</title>
+      <link>https://ldez.github.io/blog/2017/06/11/prm/</link>
+      <pubDate>Sun, 11 Jun 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/06/11/prm/</guid>
+      <description>&lt;p&gt;Pull Request Manager for Maintainers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GCG</title>
+      <link>https://ldez.github.io/blog/2017/05/14/gcg/</link>
+      <pubDate>Sun, 14 May 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/05/14/gcg/</guid>
+      <description>&lt;p&gt;A GitHub Changelog Generator.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

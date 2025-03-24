@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/test/</link>
+    <description>Recent content in Test on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2025 03:23:57 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>exptostd</title>
+      <link>https://ldez.github.io/blog/2024/12/22/exptostd/</link>
+      <pubDate>Sun, 22 Dec 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/12/22/exptostd/</guid>
+      <description>&lt;p&gt;Detects functions from golang.org/x/exp/ that can be replaced by std functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Usetesting</title>
+      <link>https://ldez.github.io/blog/2024/11/24/usetesting/</link>
+      <pubDate>Sun, 24 Nov 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/11/24/usetesting/</guid>
+      <description>&lt;p&gt;Detects when some calls can be replaced by methods from the testing package.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
