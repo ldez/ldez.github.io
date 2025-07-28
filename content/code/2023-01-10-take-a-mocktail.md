@@ -217,7 +217,7 @@ And that’s how Mocktail was born!
 
 ## Have a Mocktail, I say!
 
-[Mocktail](https://github.com/traefik/mocktail) generates strongly typed mocks and provides a simple, fluent syntax.
+[Mocktail](https://github.com/paperballs/mocktail) generates strongly typed mocks and provides a simple, fluent syntax.
 The methods of the mocks have the same signature as the real method signature.
 The number of parameters and the types of those parameters are the same as the real methods.
 
@@ -278,7 +278,7 @@ The good thing about mocktails is that you can go wild with them without any sev
 We created Mocktail to serve the needs of our team and tackle the specific issues that we were facing in our process.
 But my sincere hope is that this nifty little tool will be of use to many of you and save you hours of frustration manually creating mocks.
 
-If you’re eager to try out Mocktail, you’ll find it on [GitHub](https://github.com/traefik/mocktail).
+If you’re eager to try out Mocktail, you’ll find it on [GitHub](https://github.com/paperballs/mocktail).
 
 ---
 
