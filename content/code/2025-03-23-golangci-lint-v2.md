@@ -146,11 +146,11 @@ formatters:
 To ease the transition to v2, golangci-lint includes a migration command: `golangci-lint migrate`.
 This command automatically converts your v1 configuration to the new v2 format, ensuring a smooth and hassle-free upgrade process.
 
-We also created a detailed [migration guide](https://golangci-lint.run/product/migration-guide/).
+We also created a detailed [migration guide](https://golangci-lint.run/docs/product/migration-guide/).
 
 ## ❤️ Enjoy
 
-For more key updates, see the [changelog](https://opencollective.com/redirect?url=https%3A%2F%2Fgolangci-lint.run%2Fproduct%2Fchangelog%2F%23v200).
+For more key updates, see the [changelog](https://golangci-lint.run/docs/product/changelog/#v200).
 
 This major release marks an exciting new chapter in the evolution of golangci-lint.
 
