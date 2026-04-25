@@ -1,5 +1,5 @@
 module github.com/ldez/ldezgithubio
 
-go 1.21.0
+go 1.25.7
 
-require github.com/Lednerb/bilberry-hugo-theme/v4 v4.10.0 // indirect
+require github.com/Lednerb/bilberry-hugo-theme/v4 v4.15.3 // indirect
