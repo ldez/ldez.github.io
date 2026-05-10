@@ -41,7 +41,7 @@ disqusShortname = "thebestcodeisnocodeatall"
   # social media profile urls for the footer links
   showSocialMedia = true
   socialMediaLinks = [
-    { link = "https://bento.me/ldez", icon = "fas fa-user"},
+    { link = "https://ldez.dev", icon = "fas fa-user"},
     { link = "https://github.com/ldez", icon = "fab fa-github" },
     { link = "https://fosstodon.org/@ldez", icon = "fab fa-mastodon", rel = "me" },
     { link = "https://bsky.app/profile/ldezoss.bsky.social", icon = "fab fa-bluesky"},
