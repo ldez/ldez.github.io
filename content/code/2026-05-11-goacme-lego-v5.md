@@ -21,6 +21,8 @@ This is a major release that brings a completely redesigned CLI, and powerful ne
 
 <!--more-->
 
+This release asks me a lot of work (~150 pull requests during 3 months, 100% Human work).
+
 ## 🚀 What's New
 
 ### 💍 One Command to Rule Them All: `lego run`
