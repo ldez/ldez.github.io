@@ -212,7 +212,7 @@ See the [documentation](https://go-acme.github.io/lego/dns/) for more details.
 
 v5 includes breaking changes to the CLI, directory structure, and the API of the library.
 
-Before upgrading, run:
+Please run the new v5 command `lego migrate` before running any other commands.
 
 ```bash
 lego migrate
