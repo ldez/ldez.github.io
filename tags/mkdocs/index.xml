@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mkdocs on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/mkdocs/</link>
+    <description>Recent content in Mkdocs on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Feb 2019 12:57:16 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/mkdocs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Messor Structor 🐜</title>
+      <link>https://ldez.github.io/blog/2018/01/14/messor-structor/</link>
+      <pubDate>Sun, 14 Jan 2018 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2018/01/14/messor-structor/</guid>
+      <description>&lt;p&gt;Manage multiple documentation versions with Mkdocs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

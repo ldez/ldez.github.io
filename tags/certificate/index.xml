@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Certificate on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/certificate/</link>
+    <description>Recent content in Certificate on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 May 2026 17:01:50 +0200</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to go-acme/lego v5</title>
+      <link>https://ldez.github.io/blog/2026/05/11/lego-v5/</link>
+      <pubDate>Mon, 11 May 2026 01:06:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2026/05/11/lego-v5/</guid>
+      <description>&lt;p&gt;I am thrilled to announce go-acme/lego v5!&lt;/p&gt;&#xA;&lt;p&gt;This is a major release that brings a completely redesigned CLI, and powerful new features.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://ldez.github.io/images/lego-logo.min.svg&#34; data-dimbox data-dimbox-caption=&#34;&#34;&gt;&#xA;  &lt;img src=&#34;https://ldez.github.io/images/lego-logo.min.svg&#34;/&gt;&#xA;&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

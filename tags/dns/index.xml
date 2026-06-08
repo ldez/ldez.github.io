@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dns on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/dns/</link>
+    <description>Recent content in Dns on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Feb 2024 00:36:59 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mail-in-a-Box Go Client</title>
+      <link>https://ldez.github.io/blog/2024/02/11/mail-in-a-box-go-client/</link>
+      <pubDate>Sun, 11 Feb 2024 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2024/02/11/mail-in-a-box-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing Mail-in-a-Box API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nodion DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2023/02/05/nodion-dns-go-client/</link>
+      <pubDate>Sun, 05 Feb 2023 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2023/02/05/nodion-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing Nodion API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Freemyip DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2021/07/04/freemyip-dns-go-client/</link>
+      <pubDate>Sun, 04 Jul 2021 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/07/04/freemyip-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the freemyip.com API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Porkbun DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2021/05/01/porkbun-dns-go-client/</link>
+      <pubDate>Sat, 01 May 2021 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2021/05/01/porkbun-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Porkdun API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>deSEC DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2020/05/13/desec-dns-go-client/</link>
+      <pubDate>Wed, 13 May 2020 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2020/05/13/desec-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the deSEC API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Namesilo DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2019/03/20/namesilo-dns-go-client/</link>
+      <pubDate>Wed, 20 Mar 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/03/20/namesilo-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Namesilo API.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aurora DNS Go Client</title>
+      <link>https://ldez.github.io/blog/2019/02/01/aurora-dns-go-client/</link>
+      <pubDate>Fri, 01 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/01/aurora-dns-go-client/</guid>
+      <description>&lt;p&gt;Go library for accessing the Aurora DNS API.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

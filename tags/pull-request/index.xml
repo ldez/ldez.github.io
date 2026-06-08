@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pull-Request on The Best Code is No Code At All</title>
+    <link>https://ldez.github.io/tags/pull-request/</link>
+    <description>Recent content in Pull-Request on The Best Code is No Code At All</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Feb 2019 12:57:16 +0100</lastBuildDate>
+    <atom:link href="https://ldez.github.io/tags/pull-request/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mjolnir</title>
+      <link>https://ldez.github.io/blog/2019/02/17/mjolnir/</link>
+      <pubDate>Sun, 17 Feb 2019 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2019/02/17/mjolnir/</guid>
+      <description>&lt;p&gt;A GitHub Action to close issues related to a merged pull request.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Aloba 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</link>
+      <pubDate>Sun, 30 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/30/myrmica-aloba/</guid>
+      <description>&lt;p&gt;Add labels and milestone on pull requests and issues.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Bibikoffi 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-bibikoffi/</guid>
+      <description>&lt;p&gt;Closes stale issues.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Myrmica Lobicornis 🐜</title>
+      <link>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</link>
+      <pubDate>Sun, 23 Jul 2017 01:18:13 +0100</pubDate>
+      <guid>https://ldez.github.io/blog/2017/07/23/myrmica-lobicornis/</guid>
+      <description>&lt;p&gt;Update and Merge Pull Request.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

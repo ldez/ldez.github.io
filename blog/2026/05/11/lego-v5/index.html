@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="https://ldez.github.io/">
+    <meta name="author" content="">
+    <meta name="description" content="ldez blog">
+    <meta name="keywords" content="blog,golang,go,software,programming,developer">
+    <meta name="generator" content="Hugo 0.157.0">
+    <title>
+        
+           
+               Welcome to go-acme/lego v5 &vert; The Best Code is No Code At All
+           
+        
+    </title>
+    <meta itemprop="name" content="Welcome to go-acme/lego v5">
+    <meta itemprop="description" content="Welcome to go-acme/lego v5 - ldez blog">
+    <meta property="og:site_name" content="The Best Code is No Code At All">
+
+    <meta property="og:url" content="https://ldez.github.io/blog/2026/05/11/lego-v5/">
+  <meta property="og:site_name" content="The Best Code is No Code At All">
+  <meta property="og:title" content="Welcome to go-acme/lego v5">
+  <meta property="og:description" content="I am thrilled to announce go-acme/lego v5!
+This is a major release that brings a completely redesigned CLI, and powerful new features.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="code">
+    <meta property="article:published_time" content="2026-05-11T01:06:13+01:00">
+    <meta property="article:modified_time" content="2026-05-11T17:01:50+02:00">
+    <meta property="article:tag" content="Acme">
+    <meta property="article:tag" content="Certificate">
+    <meta property="article:tag" content="Tls">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Golang">
+
+
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+    
+
+    
+    <link rel="canonical" href="https://ldez.github.io/blog/2026/05/11/lego-v5/">
+    
+
+    
+        
+
+    
+    <script src="https://ldez.github.io/js/check-theme-prefer.min.ad7372d3b59ddf8b5ed1bb1ac4252eb33234f1c38130995cff1142b0555e94f7.js" integrity="sha256-rXNy07Wd34te0bsaxCUuszI08cOBMJlc/xFCsFVelPc=" crossorigin="anonymous"></script>
+
+
+    
+
+    
+
+
+
+    
+    <link id="theme-css" rel="stylesheet" href="https://ldez.github.io/theme.min.bafa7c13a13671cc372438ee74579f666c8621315b7ee641e7536d855aae67f6.css" integrity="sha256-uvp8E6E2ccw3JDjudFefZmyGITFbfuZB51NthVquZ/Y=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="ldez">
+    <meta name="twitter:title" content="Welcome to go-acme/lego v5">
+    <meta name="twitter:image" content="https://ldez.github.io/images/lego-logo.min.svg">
+    <meta name="twitter:image:alt" content="go-acme/lego v5">
+    <meta name="twitter:creator" content="ldez">
+
+
+    <meta name="og:image" content="https://ldez.github.io/images/lego-logo.min.svg">
+
+
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav class="permanentTopNav">
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/ldez"
+                           target="_blank">Github</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/golangci/golangci-lint"
+                           target="_blank">GolangCI-Lint</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/go-acme/lego"
+                           target="_blank">Lego</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/nrdcg/"
+                           target="_blank">NRDCG</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/kvtools/valkeyrie"
+                           target="_blank">Valkeyrie</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/50cf1dc3992f9b2291126eb8bb4c66ef?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    The Best Code is No Code At All
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">A blog with code inside.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          
+       </div>
+
+        
+            <div class="toggler permanentTopNav">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="https://ldez.github.io/blog/2026/05/11/lego-v5/">
+    <i class="fas fa-fw fa-code"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="https://ldez.github.io/blog/2026/05/11/lego-v5/">
+            Welcome to go-acme/lego v5
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-05-11</span>
+            
+        
+
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="https://ldez.github.io/categories/golang/">GoLang</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>I am thrilled to announce go-acme/lego v5!</p>
+<p>This is a major release that brings a completely redesigned CLI, and powerful new features.</p>
+<p>
+<a href="/images/lego-logo.min.svg" data-dimbox data-dimbox-caption="">
+  <img src="/images/lego-logo.min.svg"/>
+</a>
+</p>
+<p>This release asks me a lot of work (~150 pull requests during 3 months, 100% Human work).</p>
+<h2 id="-whats-new">🚀 What&rsquo;s New</h2>
+<h3 id="-one-command-to-rule-them-all-lego-run">💍 One Command to Rule Them All: <code>lego run</code></h3>
+<p>The biggest CLI change in v5 is the unification of <code>run</code> and <code>renew</code> into a single command: <code>lego run</code>.</p>
+<p>It obtains a new certificate if none exists and renews it when it&rsquo;s time.
+No more juggling two commands.</p>
+<p>Flags have also moved: global flags are now command-level flags for clarity.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Before (v4)</span>
+</span></span><span style="display:flex;"><span>lego --dns cloudflare -d <span style="color:#e6db74">&#39;*.example.com&#39;</span> -d example.com run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># After (v5)</span>
+</span></span><span style="display:flex;"><span>lego run --dns cloudflare -d <span style="color:#e6db74">&#39;*.example.com&#39;</span> -d example.com
+</span></span></code></pre></div><p>See the <a href="https://go-acme.github.io/lego/obtain/">documentation</a> for more details.</p>
+<h3 id="-configuration-file-support">📄 Configuration File Support</h3>
+<p>You can now drive lego entirely from a <code>.lego.yml</code> file, eliminating long command lines and making automation easier.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">challenges</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cf</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">dns</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">provider</span>: <span style="color:#ae81ff">cloudflare</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">certificates</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">my-cert</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">challenge</span>: <span style="color:#ae81ff">cf</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">domains</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">example.com</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;*.example.com&#39;</span>
+</span></span></code></pre></div><p>Then just run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CLOUDFLARE_EMAIL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;you@example.com&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>CLOUDFLARE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yourkey&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>lego
+</span></span></code></pre></div><p>You can also use <a href="https://go-acme.github.io/lego/dns/#dotenv-file">dotenv files</a> to manage your credentials.</p>
+<p>The configuration file supports everything: certificates, challenges, accounts, servers, hooks, and logging.</p>
+<p>It can be validated by a <a href="https://go-acme.github.io/lego/lego.jsonschema.json">JSON Schema</a>.</p>
+<p>See the <a href="https://go-acme.github.io/lego/references/ref-file/">documentation</a> for more details.</p>
+<h3 id="-new-commands-for-account-certificate-and-archive-management">🐙 New Commands for Account, Certificate, and Archive Management</h3>
+<p>v5 introduces dedicated subcommands for managing your lego data:</p>
+<p>Accounts:</p>
+<ul>
+<li><code>lego accounts register</code>: Register a new ACME account.</li>
+<li><code>lego accounts recover</code>: Recover/import an existing account from a private key.</li>
+<li><code>lego accounts keyrollover</code>: Rotate the account private key.</li>
+<li><code>lego accounts list</code>: List all accounts managed by lego.</li>
+</ul>
+<p>See the <a href="https://go-acme.github.io/lego/advanced/accounts/">documentation</a> for more details.</p>
+<p>Certificates:</p>
+<ul>
+<li><code>lego certificates list</code>: List all certificates with their status and expiration date.</li>
+<li><code>lego certificates revoke</code>: Revoke one or all certificates.</li>
+</ul>
+<p>See the <a href="https://go-acme.github.io/lego/advanced/certificates/">documentation</a> for more details.</p>
+<p>Archives:</p>
+<ul>
+<li><code>lego archives list</code>: List all backed-up accounts and certificates.</li>
+<li><code>lego archives restore</code>: Restore a backup.</li>
+</ul>
+<p>See the <a href="https://go-acme.github.io/lego/advanced/archives/">documentation</a> for more details.</p>
+<h3 id="-dns-persist-01-challenge">🔒 DNS-PERSIST-01 Challenge</h3>
+<p>lego now supports the new <code>dns-persist-01</code> challenge type.</p>
+<p>WARNING:</p>
+<ul>
+<li>The RFC is still a draft.</li>
+<li>This is currently not available in most CA production.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego run -d <span style="color:#e6db74">&#39;example.com&#39;</span> --dns-persist
+</span></span></code></pre></div><p>See the <a href="https://go-acme.github.io/lego/obtain/dnspersist01/">documentation</a> for more details.</p>
+<h3 id="-smarter-certificate-renewal">🧠 Smarter Certificate Renewal</h3>
+<p>EAB (External Account Binding) credentials are no longer required at renewal time, only at initial registration.</p>
+<p>This simplifies automated renewal pipelines, especially with commercial CAs.</p>
+<h3 id="-pre-hook-deploy-hook-and-post-hook">🪝 Pre-Hook, Deploy-Hook, and Post-Hook</h3>
+<p>lego v5 introduces three lifecycle hooks to let you run scripts around certificate issuance:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Hook</th>
+          <th>When it runs</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>pre-hook</code></td>
+          <td>Before the certificate is created or renewed (only if a change will actually happen)</td>
+      </tr>
+      <tr>
+          <td><code>deploy-hook</code></td>
+          <td>After the certificate is successfully created or renewed</td>
+      </tr>
+      <tr>
+          <td><code>post-hook</code></td>
+          <td>After the operation completes, regardless of outcome</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego run -d <span style="color:#e6db74">&#39;example.com&#39;</span> --deploy-hook<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./my-deploy-hook.sh&#39;</span>
+</span></span></code></pre></div><p>Hooks receive rich context via environment variables (<code>LEGO_HOOK_CERT_PATH</code>, <code>LEGO_HOOK_CERT_KEY_PATH</code>, etc.).</p>
+<p>With a Configuration File:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">hooks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pre</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: <span style="color:#e6db74">&#39;./my-pre-hook.sh&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: <span style="color:#e6db74">&#39;./my-deploy-hook.sh&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">post</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: <span style="color:#e6db74">&#39;./my-post-hook.sh&#39;</span>
+</span></span></code></pre></div><p>See the <a href="https://go-acme.github.io/lego/advanced/hooks/">documentation</a> for more details.</p>
+<p>Don&rsquo;t hesitate to share your hook scripts with <a href="https://github.com/go-acme/lego/discussions/categories/ideas">the community</a>.</p>
+<h3 id="-ipv6-only-support">🌐 IPv6-Only Support</h3>
+<p>For hosts running on IPv6-only networks, lego v5 can be configured to exclusively use the IPv6 network stack.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego run -d <span style="color:#e6db74">&#39;example.com&#39;</span> --http --ipv6only
+</span></span></code></pre></div><p>With a Configuration File:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">networkStack</span>: <span style="color:#ae81ff">ipv6only</span>
+</span></span></code></pre></div><h3 id="-structured-logging-with-json-output">📰 Structured Logging with JSON Output</h3>
+<p>lego v5 introduces structured logging with support for <code>text</code>, <code>colored</code> (default), and <code>json</code> formats (useful for log collectors).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego --log.format<span style="color:#f92672">=</span>json --log.level<span style="color:#f92672">=</span>info run -d <span style="color:#e6db74">&#39;example.com&#39;</span> --http
+</span></span></code></pre></div><p>Note that <code>--log.format</code> and <code>--log.level</code> are global flags.</p>
+<p>With a Configuration File:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">log</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">level</span>: <span style="color:#ae81ff">info</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">format</span>: <span style="color:#ae81ff">json</span>
+</span></span></code></pre></div><h3 id="-ca-server-short-codes">🏷️ CA Server Short-Codes</h3>
+<p>Instead of typing full ACME server URLs, you can now use short-codes for well-known CAs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego run --server<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;letsencrypt-staging&#39;</span> ...
+</span></span><span style="display:flex;"><span>lego run --server<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;zerossl&#39;</span> ...
+</span></span><span style="display:flex;"><span>lego run --server<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;googletrust&#39;</span> ...
+</span></span></code></pre></div><p>A full list of supported short-codes is available in the <a href="https://go-acme.github.io/lego/advanced/caservers/">documentation</a>.</p>
+<h3 id="-24-new-dns-providers">🗃️ 24 New DNS Providers</h3>
+<p>lego v5 adds support for 24 new DNS providers, bringing the total to over 210:</p>
+<p><a href="https://go-acme.github.io/lego/dns/dns51/">51DNS</a>, <a href="https://go-acme.github.io/lego/dns/abion/">Abion</a>, <a href="https://go-acme.github.io/lego/dns/curanet/">Curanet</a>, <a href="https://go-acme.github.io/lego/dns/dandomain/">DanDomain</a>, <a href="https://go-acme.github.io/lego/dns/dinahosting/">Dinahosting</a>, <a href="https://go-acme.github.io/lego/dns/dnsservices/">DNS.services</a>, <a href="https://go-acme.github.io/lego/dns/dnscale/">DNScale</a>, <a href="https://go-acme.github.io/lego/dns/dnsla/">dnsla</a>, <a href="https://go-acme.github.io/lego/dns/euserv/">EUsrv</a>, <a href="https://go-acme.github.io/lego/dns/fornex/">Fornex</a>, <a href="https://go-acme.github.io/lego/dns/gehirn/">Gehirn</a>, <a href="https://go-acme.github.io/lego/dns/gname/">Gname</a>, <a href="https://go-acme.github.io/lego/dns/katapult/">Katapult</a>, <a href="https://go-acme.github.io/lego/dns/nederhost/">NederHost</a>, <a href="https://go-acme.github.io/lego/dns/ngenix/">NGENIX</a>, <a href="https://go-acme.github.io/lego/dns/omglol/">omg.lol</a>, <a href="https://go-acme.github.io/lego/dns/pointdns/">PointDNS/PointHQ</a>, <a href="https://go-acme.github.io/lego/dns/rage4/">Rage4</a>, <a href="https://go-acme.github.io/lego/dns/scannet/">ScanNet</a>, <a href="https://go-acme.github.io/lego/dns/tele3/">Tele3</a>, <a href="https://go-acme.github.io/lego/dns/veesp/">Veesp</a>, <a href="https://go-acme.github.io/lego/dns/wannafind/">Wannafind</a>, <a href="https://go-acme.github.io/lego/dns/xinnet/">Xinnet</a>, <a href="https://go-acme.github.io/lego/dns/zilore/">Zilore</a>.</p>
+<p>See the <a href="https://go-acme.github.io/lego/dns/">documentation</a> for more details.</p>
+<h2 id="-migrating-from-v4">♻️ Migrating from v4</h2>
+<p>v5 includes breaking changes to the CLI, directory structure, and the API of the library.</p>
+<p>Please run the new v5 command <code>lego migrate</code> before running any other commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego migrate
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lego migrate --path /path/to/lego/storage
+</span></span></code></pre></div><p>This migrates your storage directory to the new layout.</p>
+<p>See the full <a href="https://go-acme.github.io/lego/migration/">migration guide</a> for details on flags, environment variables, and other changes.</p>
+<h2 id="-get-lego-v5">📦 Get lego v5</h2>
+<p>Download the latest release from the <a href="https://github.com/go-acme/lego/releases">GitHub releases page</a> or use your <a href="https://go-acme.github.io/lego/install/">preferred package manager</a>.</p>
+<p>We&rsquo;d love to hear your feedback.</p>
+<h2 id="-support-lego">❤️ Support lego</h2>
+<p>lego is an independent, free, and open-source project.</p>
+<p>It takes a lot of time and effort to maintain: Maintaining lego is maintaining an ACME client library, a CLI, and about +200 DNS implementations.</p>
+<p>If you find lego useful, please consider <a href="https://donate.ldez.dev">supporting me</a>.</p>
+<p>If you are a company, we have <a href="https://github.com/sponsors/go-acme">dedicated tiers</a>.</p>
+<p>Every contribution, however small, makes a real difference.</p>
+<p>Thank you!</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/acme/">Acme</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/certificate/">Certificate</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/tls/">Tls</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/go/">Go</a>
+                    
+                
+                    
+                    
+                    <a href="https://ldez.github.io/tags/golang/">Golang</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thebestcodeisnocodeatall" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2026/05/11/lego-v5/">Welcome to go-acme/lego v5</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2025/03/23/golangci-lint-v2/">Welcome to golangci-lint v2</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2024/10/26/links-godoc-module/">How I published links inside the pkg.go.dev documentation of my module</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2023/01/10/take-a-mocktail/">Take a Mocktail</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/12/04/test-driven-learning-go/">Test Driven Learning - Go</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/08/22/kata-print-diamond/">Kata Print Diamond</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://ldez.github.io/blog/2015/05/21/promesse-de-promesse/">Promesse de promesse, promis ?</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="https://ldez.github.io/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/tool/">Tool (29)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/lib/">Lib (16)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/golang/">GoLang (4)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/javascript/">Javascript (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/documentation/">Documentation (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/h%C3%A9ritage/">Héritage (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="https://ldez.github.io/categories/java/">Java (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://ldez.dev" target="_blank" rel=""><em class="fas fa-user"></em></a>
+                
+                <a href="https://github.com/ldez" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://fosstodon.org/@ldez" target="_blank" rel="me"><em class="fab fa-mastodon"></em></a>
+                
+                <a href="https://bsky.app/profile/ldezoss.bsky.social" target="_blank" rel=""><em class="fab fa-bluesky"></em></a>
+                
+                <a href="https://twitter.com/ludnadez" target="_blank" rel=""><em class="fab fa-twitter"></em></a>
+                
+            </div>
+            
+
+            
+
+            
+            <div class="archive">
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/ldez" target="_blank">
+                &copy;
+                
+                2026
+                
+                by ldez
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo Theme</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://ldez.github.io/theme.min.0b68aa25509dbfce6078d3e67e89bd5493a474f85ac3e010f0d734cce60aa4f5.js" integrity="sha256-C2iqJVCdv85geNPmfom9VJOkdPhaw&#43;AQ8Nc0zOYKpPU=" crossorigin="anonymous"></script>
+
+
+
+
+
+    
+
+    
+</body>
+
+</html>
